@@ -18,7 +18,6 @@ public class SignupActivity extends AppCompatActivity {
 
 
     @InjectView(R.id.input_email) EditText _emailText;
-    @InjectView(R.id.input_password) EditText _passwordText;
     @InjectView(R.id.btn_signup) Button _signupButton;
     @InjectView(R.id.link_login) TextView _loginLink;
     
@@ -61,7 +60,6 @@ public class SignupActivity extends AppCompatActivity {
         progressDialog.show();
 
         String email = _emailText.getText().toString();
-        String password = _passwordText.getText().toString();
 
         // TODO: Implement your own signup logic here.
 
@@ -94,23 +92,15 @@ public class SignupActivity extends AppCompatActivity {
         boolean valid = true;
 
         String email = _emailText.getText().toString();
-        String password = _passwordText.getText().toString();
 
 
 
-        if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            _emailText.setError("enter a valid email address");
-            valid = false;
-        } else {
+        if (email.isEmpty())
+        {
             _emailText.setError(null);
+            valid = false;
         }
 
-        if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
-            _passwordText.setError("between 4 and 10 alphanumeric characters");
-            valid = false;
-        } else {
-            _passwordText.setError(null);
-        }
 
         return valid;
     }
