@@ -12,11 +12,11 @@ import android.widget.Button;
 import butterknife.InjectView;
 import butterknife.ButterKnife;
 
-/**
- * Created by Michelle on 10/30/15.
- */
+//Created by Michelle on 10/30/15.
+
 public class AvailableTimeActivity extends AppCompatActivity {
     // Open when called
+    public static final String TAG = "AvailableTimeActivity";
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

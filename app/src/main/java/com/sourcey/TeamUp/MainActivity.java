@@ -1,42 +1,46 @@
 package com.sourcey.TeamUp;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import butterknife.InjectView;
-import butterknife.ButterKnife;
 
 
 public class MainActivity extends AppCompatActivity {
-    @InjectView(R.id.myTimeButton) Button _myTimeButton;
-    @InjectView(R.id.availableTimeButton) Button _availableTimeBtn;
+
+    //@InjectView(R.id.myTimeButton) Button _myTimeButton;
+    //@InjectView(R.id.availableTimeButton) Button _availableTimeBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ImageButton myTimebutton = (ImageButton)findViewById(R.id.myTimeButton);
+        ImageButton availableTimeBtn = (ImageButton)findViewById(R.id.availableTimeButton);
+
         // Open MY TIME
-        _myTimeButton.setOnClickListener(new View.OnClickListener() {
+        myTimebutton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), MyTimeActivity.class);
-                startActivityForResult(intent, 0);
+            public void onClick(View arg0) {
+                Intent intent = new Intent(getApplicationContext(), MyTimeActivity.class);
+                startActivity(intent);
             }
         });
 
+
         // Open Available Time
-        _availableTimeBtn.setOnClickListener(new View.OnClickListener() {
+        availableTimeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), AvailableTimeActivity.class);
-                startActivityForResult(intent, 0);
+                Intent intent2 = new Intent(getBaseContext(), AvailableTimeActivity.class);
+                startActivityForResult(intent2, 0);
             }
         });
 
