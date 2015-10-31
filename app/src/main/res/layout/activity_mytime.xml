@@ -1,10 +1,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+xmlns:tools="http://schemas.android.com/tools"
+android:orientation="vertical"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
 
-    tools:context=".MainActivity">
+tools:context=".MyTimeActivity">
 
     <!-- Banner -->
     <LinearLayout
@@ -39,7 +39,6 @@
                 android:gravity="center"
                 android:background="#4bb1ff">
 
-                <!-- Banner Text -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -50,7 +49,7 @@
                     android:singleLine="false"
                     android:ellipsize="none"
                     android:layout_gravity="center"
-                    android:text="CLASS TIME" />
+                    android:text="MY TIME" />
             </LinearLayout>
 
             <ImageButton
@@ -67,42 +66,5 @@
     </LinearLayout>
 
     <!-- Content -->
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:weightSum="1">
 
-        <ImageButton
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="50dp"
-            android:scaleType="centerCrop"
-            android:id="@+id/myTimeButton"
-            android:src="@mipmap/clock_icon"
-            android:background="#00000000" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="My Time"
-            android:textColor="#7fc236" />
-
-        <ImageButton
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@mipmap/schedule_icon"
-            android:background="#00000000"
-            android:scaleType="centerCrop"
-            android:id="@+id/availableTimeButton"
-            android:layout_marginTop="50dp"
-            android:tint="#88cc37" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Available Time"
-            android:textColor="#7fc236" />
-    </LinearLayout>
 </LinearLayout>
