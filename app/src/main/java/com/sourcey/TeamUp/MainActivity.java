@@ -3,20 +3,43 @@ package com.sourcey.TeamUp;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+
+import butterknife.InjectView;
+import butterknife.ButterKnife;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
+    @InjectView(R.id.myTimeButton) Button _myTimeButton;
+    @InjectView(R.id.availableTimeButton) Button _availableTimeBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Open MY TIME
+        _myTimeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), MyTimeActivity.class);
+                startActivityForResult(intent, 0);
+            }
+        });
 
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
+        // Open Available Time
+        _availableTimeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), AvailableTimeActivity.class);
+                startActivityForResult(intent, 0);
+            }
+        });
+
     }
 
     @Override
@@ -40,4 +63,5 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }

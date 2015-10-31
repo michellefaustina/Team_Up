@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:orientation="vertical"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
 
-tools:context=".MyTimeActivity">
+    tools:context=".AvailableTimeActivity">
 
     <!-- Banner -->
     <LinearLayout
@@ -45,12 +45,12 @@ tools:context=".MyTimeActivity">
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:textStyle="bold"
-                    android:textSize="30dp"
+                    android:textSize="27dp"
                     android:typeface="normal"
                     android:singleLine="false"
                     android:ellipsize="none"
                     android:layout_gravity="center"
-                    android:text="MY TIME" />
+                    android:text="AVAILABLE TIME" />
             </LinearLayout>
 
             <ImageButton

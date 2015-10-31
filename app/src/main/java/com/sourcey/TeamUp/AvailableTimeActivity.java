@@ -15,11 +15,11 @@ import butterknife.ButterKnife;
 /**
  * Created by Michelle on 10/30/15.
  */
-public class MyTimeActivity extends AppCompatActivity {
+public class AvailableTimeActivity extends AppCompatActivity {
     // Open when called
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mytime);
+        setContentView(R.layout.activity_availabletime);
     }
 }
