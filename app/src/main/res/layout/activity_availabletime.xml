@@ -45,9 +45,9 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:textStyle="bold"
-                    android:textSize="27dp"
+                    android:textSize="24dp"
                     android:typeface="normal"
-                    android:singleLine="false"
+                    android:singleLine="true"
                     android:ellipsize="none"
                     android:layout_gravity="center"
                     android:text="AVAILABLE TIME" />
