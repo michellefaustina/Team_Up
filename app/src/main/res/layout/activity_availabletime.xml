@@ -26,11 +26,13 @@
                 android:gravity="center"
                 android:background="#4bb1ff">
 
-                <ImageView
+                <ImageButton
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@mipmap/back_icon"
-                    android:tint="#ffffff" />
+                    android:tint="#ffffff"
+                    android:background="#00000000"
+                    android:id="@+id/backBtn"/>
             </LinearLayout>
 
             <LinearLayout
@@ -67,17 +69,70 @@
         </LinearLayout>
     </LinearLayout>
 
+    <!-- Content -->
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/ListOfTimes1"
+        android:background="#ffffff">
+
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></LinearLayout>
+            android:id="@+id/time_section1"
+            android:layout_height="73dp"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp"
+            android:background="#eeeeee">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="CLASS NAME"
+                android:layout_gravity="center"
+                android:singleLine="true"
+                android:id="@+id/textView31"
+                android:editable="false" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="TIME"
+                android:layout_gravity="center"
+                android:singleLine="true"
+                android:textSize="20dp"
+                android:id="@+id/textView1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="LOCATION"
+                android:layout_gravity="center"
+                android:singleLine="true"
+                android:textSize="20dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/textView21" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="16dp"
+                android:text="cancel"
+                android:layout_weight="1"
+                android:id="@+id/button1"
+                android:background="#9a9a9a"
+                android:singleLine="true" />
+        </LinearLayout>
+
     </LinearLayout>
-
-    <!-- Content -->
-
 </LinearLayout>

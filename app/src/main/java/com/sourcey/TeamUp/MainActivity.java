@@ -14,8 +14,9 @@ import butterknife.InjectView;
 
 public class MainActivity extends AppCompatActivity {
 
-    //@InjectView(R.id.myTimeButton) Button _myTimeButton;
-    //@InjectView(R.id.availableTimeButton) Button _availableTimeBtn;
+    @InjectView(R.id.myTimeButton) Button _myTimeButton;
+    @InjectView(R.id.availableTimeButton) Button _availableTimeBtn;
+    @InjectView(R.id.userButton) Button _userBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         ImageButton myTimebutton = (ImageButton)findViewById(R.id.myTimeButton);
         ImageButton availableTimeBtn = (ImageButton)findViewById(R.id.availableTimeButton);
+        ImageButton userBtn = (ImageButton)findViewById(R.id.userButton);
 
         // Open MY TIME
         myTimebutton.setOnClickListener(new View.OnClickListener() {
@@ -34,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         // Open Available Time
         availableTimeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +45,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Open Profile Activity
+        userBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(getBaseContext(), ProfileActivity.class);
+                startActivityForResult(intent2, 0);
+            }
+        });
     }
 
     @Override
