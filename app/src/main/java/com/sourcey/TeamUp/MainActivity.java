@@ -23,8 +23,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent = new Intent(getBaseContext(),LoginActivity.class);
+        /*Intent intent = new Intent(getBaseContext(),LoginActivity.class);
         startActivity(intent);
+        finishActivity(0);*/
 
         ImageButton myTimebutton = (ImageButton)findViewById(R.id.myTimeButton);
         ImageButton availableTimeBtn = (ImageButton)findViewById(R.id.availableTimeButton);
