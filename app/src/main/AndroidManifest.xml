@@ -24,6 +24,8 @@
         <activity android:name=".AvailableTimeActivity" />
         <activity android:name=".MyTimeActivity" />
         <activity android:name=".ProfileActivity"/>
+        <activity android:name=".PopupActivity"
+            android:theme="@style/AppTheme.CustomTheme"/>
     </application>
 
 </manifest>

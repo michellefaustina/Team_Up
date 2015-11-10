@@ -1,17 +1,10 @@
 package com.sourcey.TeamUp;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
-
-import butterknife.InjectView;
-import butterknife.ButterKnife;
 
 //Created by Michelle on 10/30/15.
 
@@ -24,6 +17,7 @@ public class AvailableTimeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_availabletime);
 
         ImageButton backBtn = (ImageButton)findViewById(R.id.backBtn);
+        ImageButton userBtn = (ImageButton)findViewById(R.id.userButton);
 
         // Back
         backBtn.setOnClickListener(new View.OnClickListener() {
@@ -33,5 +27,18 @@ public class AvailableTimeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //userBtn
+        userBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(getApplicationContext(), PopupActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
+
+
+
 }
