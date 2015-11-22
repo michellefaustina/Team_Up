@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
 
     tools:context=".PopupActivity">
 
@@ -11,7 +11,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="fill_parent"
-        android:layout_height="83dp">
+        android:layout_height="70.55dp">
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
@@ -26,8 +26,8 @@
                 android:background="#4bb1ff">
 
                 <ImageButton
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_width="68dp"
+                    android:layout_height="68dp"
                     android:src="@mipmap/back_icon"
                     android:background="#00000000"
                     android:id="@+id/backBtn"
@@ -37,7 +37,7 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
-                android:layout_height="80dp"
+                android:layout_height="68dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:background="#4bb1ff">
@@ -47,7 +47,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:textStyle="bold"
-                    android:textSize="30dp"
+                    android:textSize="25.5sp"
                     android:typeface="normal"
                     android:singleLine="false"
                     android:ellipsize="none"
@@ -56,8 +56,8 @@
             </LinearLayout>
 
             <Button
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="68dp"
+                android:layout_height="68dp"
                 android:id="@+id/userButton"
                 android:background="#4bb1ff"
                 android:tintMode="src_in"
@@ -75,25 +75,25 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingTop="20dp">
+        android:layout_height="wrap_content"
+        android:paddingLeft="12.75dp"
+        android:paddingRight="12.75dp"
+        android:paddingTop="17dp">
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="51dp"
             android:layout_gravity="center"
             android:gravity="center"
-            android:paddingTop="20dp">
+            android:paddingTop="17dp">
 
             <TextView
-                android:layout_width="200dp"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Alarm Time:"
-                android:textSize="20dp" />
+                android:textSize="17sp" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -107,24 +107,24 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="51dp"
             android:layout_gravity="center"
             android:gravity="center"
-            android:paddingTop="20dp">
+            android:paddingTop="17dp">
 
             <TextView
-                android:layout_width="200dp"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Major Selection:"
-                android:textSize="20dp" />
+                android:textSize="17sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textCapWords"
                 android:text="CSE"
-                android:textSize="20dp"
+                android:textSize="17sp"
                 android:gravity="center"
                 android:ems="10" />
 
@@ -133,17 +133,17 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="51dp"
             android:layout_gravity="center"
             android:gravity="center"
-            android:paddingTop="20dp">
+            android:paddingTop="17dp">
 
             <TextView
-                android:layout_width="200dp"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Class Selection:"
-                android:textSize="20dp" />
+                android:textSize="17sp" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -157,17 +157,17 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="51dp"
             android:layout_gravity="center"
             android:gravity="center"
-            android:paddingTop="20dp">
+            android:paddingTop="17dp">
 
             <TextView
-                android:layout_width="200dp"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Password Change:"
-                android:textSize="20dp" />
+                android:textSize="17sp" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -181,17 +181,17 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="51dp"
             android:layout_gravity="center"
             android:gravity="center"
-            android:paddingTop="20dp">
+            android:paddingTop="17dp">
 
             <TextView
-                android:layout_width="200dp"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Confirm Password:"
-                android:textSize="20dp" />
+                android:textSize="17sp" />
 
             <EditText
                 android:layout_width="wrap_content"
