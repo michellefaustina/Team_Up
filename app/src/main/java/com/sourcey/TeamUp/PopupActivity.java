@@ -24,8 +24,8 @@ public class PopupActivity extends Activity{
 
         getWindow().setLayout((int) (width * 0.85), (int) (height * 0.65));
 
-        /*ImageButton backBtn = (ImageButton)findViewById(R.id.backBtn);
-        ImageButton userBtn = (ImageButton)findViewById(R.id.userButton);
+        ImageButton backBtn = (ImageButton)findViewById(R.id.backBtn);
+        //ImageButton userBtn = (ImageButton)findViewById(R.id.userButton);
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,14 +35,13 @@ public class PopupActivity extends Activity{
             }
         });
 
-        userBtn.setOnClickListener(new View.OnClickListener(){
+        /*userBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), AvailableTimeActivity.class);
                 startActivity(intent);
             }
         });*/
-
     }
 }
 

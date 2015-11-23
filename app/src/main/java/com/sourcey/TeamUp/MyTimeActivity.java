@@ -25,22 +25,12 @@ public class MyTimeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mytime);
 
         ImageButton backBtn = (ImageButton)findViewById(R.id.backBtn);
-        ImageButton userBtn = (ImageButton)findViewById(R.id.userButton);
 
         // Back
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
                 Intent intent = new Intent(getBaseContext(), MainActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        //userBtn
-        userBtn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View arg0) {
-                Intent intent = new Intent(getApplicationContext(), PopupActivity.class);
                 startActivity(intent);
             }
         });

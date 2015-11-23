@@ -25,6 +25,7 @@
                 android:gravity="center"
                 android:background="#4bb1ff">
 
+                <!--Back Button-->
                 <ImageButton
                     android:layout_width="68dp"
                     android:layout_height="68dp"
@@ -72,6 +73,7 @@
 
     </LinearLayout>
 
+    <!--Content-->
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
