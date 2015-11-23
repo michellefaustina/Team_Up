@@ -5,6 +5,7 @@ import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageButton;
 import android.graphics.Color;
 import android.widget.Button;
@@ -17,10 +18,12 @@ public class AvailableTimeActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_availabletime);
 
         ImageButton backBtn = (ImageButton)findViewById(R.id.backBtn);
         ImageButton userBtn = (ImageButton)findViewById(R.id.userButton);
+        Button detailBtn = (Button)findViewById(R.id.detailButton);
         final Button signupBtn = (Button)findViewById(R.id.signUpButton);
 
         // Back
@@ -32,7 +35,7 @@ public class AvailableTimeActivity extends AppCompatActivity {
             }
         });
 
-        //userBtn
+        //create button
         userBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View arg0) {
@@ -40,6 +43,16 @@ public class AvailableTimeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        // Details button
+        detailBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(getApplicationContext(), DetailsATActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         //change color of signup buttom
         signupBtn.setOnClickListener(new View.OnClickListener() {

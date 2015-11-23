@@ -28,6 +28,12 @@
         <item name="android:windowCloseOnTouchOutside">true</item>
     </style>
 
+    <style name="AppTheme.Light" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:textColor" >@color/black</item>
+        <item name="android:textColorHint">@color/aluminum</item>
+        <item name="android:editTextColor">@color/black</item>
+    </style>
 
 
 </resources>

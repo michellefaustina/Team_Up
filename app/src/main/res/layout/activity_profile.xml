@@ -8,17 +8,15 @@
     tools:context=".ProfileActivity">
 
     <!-- Banner -->
-
-
     <LinearLayout
-android:orientation="horizontal"
-android:layout_width="fill_parent"
-android:layout_height="83dp">
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="83dp">
     <LinearLayout
-    android:orientation="horizontal"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:weightSum="1">
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="1">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -100,6 +98,8 @@ android:layout_height="83dp">
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="12:00"
                 android:inputType="time"
                 android:ems="10"
                 android:id="@+id/editText1" />
@@ -148,6 +148,8 @@ android:layout_height="83dp">
                 android:textSize="20sp" />
 
             <EditText
+                android:gravity="center"
+                android:hint="CSE110"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textCapCharacters"
@@ -172,6 +174,9 @@ android:layout_height="83dp">
                 android:textSize="20sp" />
 
             <EditText
+                android:gravity="center"
+                android:hint="New password"
+                android:textSize="16sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
@@ -196,6 +201,8 @@ android:layout_height="83dp">
                 android:textSize="20sp" />
 
             <EditText
+                android:gravity="center"
+                android:hint="Retype"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
@@ -216,5 +223,5 @@ android:layout_height="83dp">
             android:background="#4bb1ff"
             android:id="@+id/btn_logout"/>
     </LinearLayout>
-</ScrollView>
- </LinearLayout>
+    </ScrollView>
+</LinearLayout>
