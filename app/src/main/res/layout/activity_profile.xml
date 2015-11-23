@@ -8,7 +8,9 @@
     tools:context=".ProfileActivity">
 
     <!-- Banner -->
-<LinearLayout
+
+
+    <LinearLayout
 android:orientation="horizontal"
 android:layout_width="fill_parent"
 android:layout_height="83dp">
@@ -69,7 +71,9 @@ android:layout_height="83dp">
 </LinearLayout>
 
 </LinearLayout>
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -212,4 +216,5 @@ android:layout_height="83dp">
             android:background="#4bb1ff"
             android:id="@+id/btn_logout"/>
     </LinearLayout>
+</ScrollView>
  </LinearLayout>

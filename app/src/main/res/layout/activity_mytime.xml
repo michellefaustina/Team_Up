@@ -70,6 +70,9 @@ tools:context=".MyTimeActivity">
     </LinearLayout>
 
     <!-- Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -121,5 +124,6 @@ tools:context=".MyTimeActivity">
         </LinearLayout>
 
     </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
