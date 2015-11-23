@@ -26,12 +26,22 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         ImageButton backBtn = (ImageButton)findViewById(R.id.backBtn);
+        Button logoutBtn = (Button)findViewById(R.id.btn_logout);
 
         // Back
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //logout
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent);
             }
         });

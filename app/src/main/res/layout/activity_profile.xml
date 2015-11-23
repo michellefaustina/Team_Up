@@ -199,6 +199,17 @@ android:layout_height="83dp">
                 android:id="@+id/editText4" />
 
         </LinearLayout>
-
+        <!--logout button-->
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:text="Logout"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:background="#4bb1ff"
+            android:id="@+id/btn_logout"/>
     </LinearLayout>
  </LinearLayout>
