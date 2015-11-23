@@ -8,9 +8,6 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.ImageButton;
 
-/**
- * Created by user on 2015/11/9.
- */
 public class PopupActivity extends Activity{
 
     @Override
