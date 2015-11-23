@@ -22,7 +22,7 @@ public class PopupActivity extends Activity{
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int) (width * 0.85), (int) (height * 0.4));
+        getWindow().setLayout((int) (width * 0.85), (int) (height * 0.5));
 
         ImageButton backBtn = (ImageButton)findViewById(R.id.backBtn);
         //ImageButton userBtn = (ImageButton)findViewById(R.id.userButton);
