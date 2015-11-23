@@ -98,40 +98,26 @@ tools:context=".MyTimeActivity">
                 android:id="@+id/textView31"
                 android:editable="false" />
 
-            <TextView
+            <Button
+                style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="TIME"
                 android:layout_gravity="center"
-                android:singleLine="true"
-                android:textSize="20dp"
-                android:id="@+id/textView1" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="LOCATION"
-                android:layout_gravity="center"
-                android:singleLine="true"
-                android:textSize="20dp"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:id="@+id/textView21" />
+                android:text="DETAIL"
+                android:id="@+id/detailButton"
+                android:background="#4fb3f5" />
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:gravity="center"
-                android:textSize="16dp"
-                android:text="cancel"
                 android:layout_weight="1"
-                android:id="@+id/button1"
-                android:background="#9a9a9a"
-                android:singleLine="true" />
+                android:text="QUIT"
+                android:id="@+id/signUpButton"
+                android:background="#4fb3f5"
+                android:layout_marginLeft="14dp"/>
         </LinearLayout>
 
     </LinearLayout>

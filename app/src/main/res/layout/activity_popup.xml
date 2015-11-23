@@ -94,13 +94,13 @@
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Alarm Time:"
+                android:text="Class Name:"
                 android:textSize="17sp" />
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="time"
+                android:inputType="text"
                 android:ems="10"
                 android:id="@+id/editText1" />
 
@@ -118,39 +118,13 @@
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Major Selection:"
-                android:textSize="17sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textCapWords"
-                android:text="CSE"
-                android:textSize="17sp"
-                android:gravity="center"
-                android:ems="10" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="51dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:paddingTop="17dp">
-
-            <TextView
-                android:layout_width="170dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Class Selection:"
+                android:text="Time:"
                 android:textSize="17sp" />
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="textCapCharacters"
+                android:inputType="time"
                 android:ems="10"
                 android:id="@+id/editText2" />
 
@@ -168,39 +142,15 @@
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Password Change:"
+                android:text="Location:"
                 android:textSize="17sp" />
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
+                android:inputType="text"
                 android:ems="10"
                 android:id="@+id/editText3" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="51dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:paddingTop="17dp">
-
-            <TextView
-                android:layout_width="170dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Confirm Password:"
-                android:textSize="17sp" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:ems="10"
-                android:id="@+id/editText4" />
 
         </LinearLayout>
 
