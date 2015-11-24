@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.parse.Parse;
+import com.parse.ParseObject;
+
 import butterknife.InjectView;
 
 
