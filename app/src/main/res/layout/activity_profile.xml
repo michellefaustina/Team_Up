@@ -95,9 +95,33 @@
                 android:text="Alarm Time:"
                 android:textSize="20sp" />
 
+            <!--<ScrollView-->
+                <!--android:id="@+id/ScrollView01"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="100px">-->
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/LinearLayout02"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="vertical">-->
+                    <!--<Button android:id="@+id/Button01"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="But1"></Button>-->
+                    <!--<Button android:id="@+id/Button02"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="But1"></Button>-->
+                    <!--<Button android:id="@+id/Button02"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="But1"></Button>-->
+                <!--</LinearLayout>-->
+            <!--</ScrollView>-->
+
             <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
                 android:gravity="center"
                 android:hint="12:00"
                 android:inputType="time"
@@ -151,7 +175,7 @@
                 android:gravity="center"
                 android:hint="CSE110"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:inputType="textCapCharacters"
                 android:ems="10"
                 android:id="@+id/editText2" />
@@ -175,10 +199,10 @@
 
             <EditText
                 android:gravity="center"
-                android:hint="New password"
+                android:hint="New One"
                 android:textSize="16sp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:inputType="textPassword"
                 android:ems="10"
                 android:id="@+id/editText3" />
@@ -204,7 +228,7 @@
                 android:gravity="center"
                 android:hint="Retype"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:inputType="textPassword"
                 android:ems="10"
                 android:id="@+id/editText4" />
