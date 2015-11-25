@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.EditText;
@@ -20,11 +21,9 @@ import butterknife.InjectView;
 
 public class PopupActivity extends Activity{
 
-    @InjectView(R.id.className) EditText _className;
-    @InjectView(R.id.time) EditText _time;
-    @InjectView(R.id.location) EditText _location;
-    @InjectView(R.id.groupSize) EditText _groupSize;
-    @InjectView(R.id.doneBtn) Button _done;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +39,12 @@ public class PopupActivity extends Activity{
         getWindow().setLayout((int) (width * 0.85), (int) (height * 0.5));
 
         ImageButton backBtn = (ImageButton)findViewById(R.id.backBtn);
-        Button doneBtn = (Button)findViewById(R.id.doneBtn);
+        final EditText className = (EditText)findViewById(R.id.className);
+        final EditText time = (EditText)findViewById(R.id.time);
+        final EditText location = (EditText)findViewById(R.id.location);
+        final EditText groupSize = (EditText)findViewById(R.id.groupSize);
+
+        final Button doneBtn = (Button)findViewById(R.id.doneBtn);
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +57,21 @@ public class PopupActivity extends Activity{
         doneBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (ifempty(className) && ifempty(time) &&ifempty(location) && ifempty(groupSize)) {
+                    doneBtn.setEnabled(false);
+                    createFailed();
+                    return;
+                }
+//                if (ifempty(time)) {
+//                    createFailed();
+//                }
+//                if (ifempty(location)) {
+//                    createFailed();
+//                }
+//                if (ifempty(groupSize)) {
+//                    createFailed();
+//                }
+
                 //createTime();
 
                 /*String className = _className.getText().toString();
@@ -69,13 +88,28 @@ public class PopupActivity extends Activity{
                 //}
 
                 //setCourseName(className);
-
                 Intent intent = new Intent(getApplicationContext(), AvailableTimeActivity.class);
                 startActivity(intent);
             }
         });
+
+
     }
 
+
+    public void createFailed() {
+        Toast.makeText(this, "You did not complete the required fields", Toast.LENGTH_SHORT).show();
+
+    }
+
+    private boolean ifempty(EditText eText) {
+        String enterSubject = eText.getText().toString();
+        if ( enterSubject.isEmpty()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     /*public void createTime() {
         if (!validate()) {
             onFailed();
