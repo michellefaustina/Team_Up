@@ -15,6 +15,7 @@ import android.widget.Button;
 public class AvailableTimeActivity extends AppCompatActivity {
     // Open when called
     public static final String TAG = "AvailableTimeActivity";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

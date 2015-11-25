@@ -37,7 +37,7 @@ public class PopupActivity extends Activity{
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int) (width * 0.85), (int) (height * 0.5));
+        getWindow().setLayout((int) (width * 0.85), (int) (height * 0.7));
 
         ImageButton backBtn = (ImageButton)findViewById(R.id.backBtn);
         Button doneBtn = (Button)findViewById(R.id.doneBtn);
@@ -55,11 +55,12 @@ public class PopupActivity extends Activity{
             public void onClick(View view) {
                 //createTime();
 
-                /*String className = _className.getText().toString();
+                /*
+                String className = _className.getText().toString();
                 String time = _time.getText().toString();
                 String location = _location.getText().toString();
-                String size = _groupSize.getText().toString();
-                int intSize = Integer.parseInt(size);*/
+                //String size = _groupSize.getText().toString();
+                //int intSize = Integer.parseInt(size);*/
 
                 //if (className.isEmpty() || time.isEmpty() || location.isEmpty() || intSize == 0) {
                     //ParseException e = new ParseException("", 1);
