@@ -15,14 +15,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.app.AlertDialog;
 import java.text.ParseException;
-
 import butterknife.InjectView;
+import com.parse.ParseObject;
 
 
 public class PopupActivity extends Activity{
 
 
 
+
+
+    private EditText className, time, location, size;
 
 
     @Override
@@ -36,7 +39,7 @@ public class PopupActivity extends Activity{
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int) (width * 0.85), (int) (height * 0.5));
+        getWindow().setLayout((int) (width * 0.85), (int) (height * 0.7));
 
         ImageButton backBtn = (ImageButton)findViewById(R.id.backBtn);
         final EditText className = (EditText)findViewById(R.id.className);
@@ -74,18 +77,26 @@ public class PopupActivity extends Activity{
 
                 //createTime();
 
-                /*String className = _className.getText().toString();
-                String time = _time.getText().toString();
-                String location = _location.getText().toString();
-                String size = _groupSize.getText().toString();
-                int intSize = Integer.parseInt(size);*/
 
-                //if (className.isEmpty() || time.isEmpty() || location.isEmpty() || intSize == 0) {
-                    //ParseException e = new ParseException("", 1);
-                    //Toast.makeText(PopupActivity.this, "incomplete" + e, Toast.LENGTH_SHORT).show();
-                    //new AlertDialog.Builder(PopupActivity.this).setTitle("Argh").setMessage("Watch out!").setNeutralButton("Close", null).show();
-
-                //}
+                //boolean textToString = false;
+                /*
+                className = (EditText) _className.getText();
+                time = (EditText) _time.getText();
+                location = (EditText)_location.getText();
+                size =(EditText) _groupSize.getText();
+                /*
+                if (isEmpty(className) || isEmpty(time) || isEmpty(location) || isEmpty(size)) {
+                    textToString = false;
+                }
+                else{
+                    ParseObject groupObject = new ParseObject("Group");
+                    groupObject.put("GroupName", className.toString());
+                    groupObject.put("Time", time.toString());
+                    groupObject.put("Location", location.toString());
+                    groupObject.put("Counter", (size.toString()));
+                    groupObject.saveInBackground();
+                }
+                */
 
                 //setCourseName(className);
                 Intent intent = new Intent(getApplicationContext(), AvailableTimeActivity.class);
@@ -192,6 +203,9 @@ public class PopupActivity extends Activity{
 
         return valid;
     }*/
+    private boolean isEmpty(EditText eText){
+        return (eText.getText().toString().trim().length() >0);
+    }
 }
 
 
