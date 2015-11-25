@@ -26,6 +26,7 @@ public class MyTimeActivity extends AppCompatActivity {
 
         ImageButton backBtn = (ImageButton)findViewById(R.id.backBtn);
         Button detailBtn = (Button)findViewById(R.id.detailButton);
+        Button quitBtn = (Button)findViewById(R.id.quitButton);
 
         // Back
         backBtn.setOnClickListener(new View.OnClickListener() {
@@ -45,5 +46,8 @@ public class MyTimeActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        //quit button
+
     }
 }

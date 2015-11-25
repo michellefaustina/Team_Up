@@ -23,11 +23,6 @@ public class PopupActivity extends Activity{
 
 
 
-
-
-    private EditText className, time, location, size;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,40 +60,7 @@ public class PopupActivity extends Activity{
                     createFailed();
                     return;
                 }
-//                if (ifempty(time)) {
-//                    createFailed();
-//                }
-//                if (ifempty(location)) {
-//                    createFailed();
-//                }
-//                if (ifempty(groupSize)) {
-//                    createFailed();
-//                }
 
-                //createTime();
-
-
-                //boolean textToString = false;
-                /*
-                className = (EditText) _className.getText();
-                time = (EditText) _time.getText();
-                location = (EditText)_location.getText();
-                size =(EditText) _groupSize.getText();
-                /*
-                if (isEmpty(className) || isEmpty(time) || isEmpty(location) || isEmpty(size)) {
-                    textToString = false;
-                }
-                else{
-                    ParseObject groupObject = new ParseObject("Group");
-                    groupObject.put("GroupName", className.toString());
-                    groupObject.put("Time", time.toString());
-                    groupObject.put("Location", location.toString());
-                    groupObject.put("Counter", (size.toString()));
-                    groupObject.saveInBackground();
-                }
-                */
-
-                //setCourseName(className);
                 Intent intent = new Intent(getApplicationContext(), AvailableTimeActivity.class);
                 startActivity(intent);
             }
@@ -121,91 +83,7 @@ public class PopupActivity extends Activity{
             return false;
         }
     }
-    /*public void createTime() {
-        if (!validate()) {
-            onFailed();
-            return;
-        }
 
-        _done.setEnabled(false);
-
-        final ProgressDialog progressDialog = new ProgressDialog(PopupActivity.this,
-                R.style.AppTheme_Dark_Dialog);
-        progressDialog.setIndeterminate(true);
-        progressDialog.setMessage("Creating...");
-        progressDialog.show();
-
-
-
-        new android.os.Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
-                        // On complete call either onLoginSuccess or onLoginFailed
-                        onSuccess();
-                        // onLoginFailed();
-                        progressDialog.dismiss();
-                    }
-                }, 3000);
-    }
-
-    public void onSuccess() {
-        _done.setEnabled(true);
-
-        String className = _className.getText().toString();
-        String time = _time.getText().toString();
-        String location = _location.getText().toString();
-        String size = _groupSize.getText().toString();
-
-        // create schedule with the above info
-
-        // this is temporary
-        Intent intent = new Intent(getApplicationContext(), AvailableTimeActivity.class);
-        startActivity(intent);
-    }
-
-    public void onFailed() {
-        //Toast.makeText(getBaseContext(), "Create failed", Toast.LENGTH_LONG).show();
-
-        // this is temporary
-        Intent intent = new Intent(getApplicationContext(), AvailableTimeActivity.class);
-        startActivity(intent);
-
-        _done.setEnabled(true);
-    }
-
-    public boolean validate() {
-        boolean valid = true;
-
-        String className = _className.getText().toString();
-        String time = _time.getText().toString();
-        String location = _location.getText().toString();
-        String size = _groupSize.getText().toString();
-
-        if (className.isEmpty()) {
-            _className.setError("*");
-            valid = false;
-        }
-
-        if (time.isEmpty()) {
-            _time.setError("*");
-            valid = false;
-        }
-
-        if (location.isEmpty()) {
-            _location.setError("*");
-            valid = false;
-        }
-
-        if (size.isEmpty()) {
-            _groupSize.setError("*");
-            valid = false;
-        }
-
-        return valid;
-    }*/
-    private boolean isEmpty(EditText eText){
-        return (eText.getText().toString().trim().length() >0);
-    }
 }
 
 

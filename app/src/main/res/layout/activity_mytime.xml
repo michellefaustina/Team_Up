@@ -121,7 +121,7 @@ tools:context=".MyTimeActivity">
                 android:layout_weight="1"
                 android:textColor="@color/white"
                 android:text="QUIT"
-                android:id="@+id/signUpButton"
+                android:id="@+id/quitButton"
                 android:background="#4fb3f5"
                 android:layout_marginLeft="14dp"/>
         </LinearLayout>
