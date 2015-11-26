@@ -80,55 +80,6 @@
         android:paddingRight="15dp"
         android:paddingTop="20dp">
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:paddingTop="20dp">
-
-            <TextView
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Alarm Time:"
-                android:textSize="20sp" />
-
-            <!--<ScrollView-->
-                <!--android:id="@+id/ScrollView01"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="100px">-->
-                <!--<LinearLayout-->
-                    <!--android:id="@+id/LinearLayout02"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:orientation="vertical">-->
-                    <!--<Button android:id="@+id/Button01"-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:text="But1"></Button>-->
-                    <!--<Button android:id="@+id/Button02"-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:text="But1"></Button>-->
-                    <!--<Button android:id="@+id/Button02"-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:text="But1"></Button>-->
-                <!--</LinearLayout>-->
-            <!--</ScrollView>-->
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center"
-                android:hint="12:00"
-                android:inputType="time"
-                android:ems="10"
-                android:id="@+id/editText1" />
-
-        </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"

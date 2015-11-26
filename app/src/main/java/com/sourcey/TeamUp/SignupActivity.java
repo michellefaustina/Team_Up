@@ -11,6 +11,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
 
+
+import com.parse.LogInCallback;
+import com.parse.ParseUser;
+
+import java.text.ParseException;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
@@ -80,6 +86,25 @@ public class SignupActivity extends AppCompatActivity {
     public void onSignupSuccess() {
         _signupButton.setEnabled(true);
         setResult(RESULT_OK, null);
+//        ParseUser user = new ParseUser();
+//        user.setUsername(_emailText.toString());
+//        user.setPassword("password");
+//        user.setEmail(_emailText.toString()+"@ucsd.edu");
+
+//        user.signUpInBackground(new SignUpCallBack() {
+////            public void done (ParseException e){
+////                if (e == null) {
+////                    // Hooray! Let them use the app now.
+////
+////                } else {
+////                    // Sign up didn't succeed. Look at the ParseException
+////                    // to figure out what went wrong
+////                    onSignupFailed();
+////                    return;
+////
+////                }
+////            }
+//        });
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         finish();

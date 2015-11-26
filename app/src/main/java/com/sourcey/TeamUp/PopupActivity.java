@@ -6,6 +6,7 @@ import android.media.Image;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -21,7 +22,7 @@ import com.parse.ParseObject;
 
 public class PopupActivity extends Activity{
 
-
+    private static final String TAG = "PopupActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,12 +56,12 @@ public class PopupActivity extends Activity{
         doneBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ifempty(className) && ifempty(time) &&ifempty(location) && ifempty(groupSize)) {
-                    doneBtn.setEnabled(false);
+                if (ifempty(className) || ifempty(time) ||ifempty(location) || ifempty(groupSize)) {
+                    Log.d(TAG, "if one is empty");
+
                     createFailed();
                     return;
                 }
-
                 Intent intent = new Intent(getApplicationContext(), AvailableTimeActivity.class);
                 startActivity(intent);
             }
