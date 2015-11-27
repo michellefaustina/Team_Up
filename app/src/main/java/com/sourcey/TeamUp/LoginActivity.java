@@ -12,8 +12,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.parse.LogInCallback;
 import com.parse.Parse;
+import com.parse.ParseException;
 import com.parse.ParseObject;
+import com.parse.ParseUser;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -26,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     @InjectView(R.id.input_password) EditText _passwordText;
     @InjectView(R.id.btn_login) Button _loginButton;
     @InjectView(R.id.link_signup) TextView _signupLink;
+
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,9 +57,10 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void login() {
-        Log.d(TAG, "Login");
+        Log.d(TAG, "in function login");
 
         if (!validate()) {
+            Log.d(TAG, "not valid!");
             onLoginFailed();
             return;
         }
@@ -68,18 +73,37 @@ public class LoginActivity extends AppCompatActivity {
         progressDialog.setMessage("Authenticating...");
         progressDialog.show();
 
-        String email = _emailText.getText().toString();
-        String password = _passwordText.getText().toString();
+        ParseUser.logInInBackground(_emailText.getText().toString(), _passwordText.getText().toString(), new LogInCallback() {
+            public void done(ParseUser user, ParseException e) {
+                if (user == null) {
+                    //not in cloud
+                    Log.d(TAG, "user is null here");
+                    Toast.makeText(LoginActivity.this, "Email address is not registered!", Toast.LENGTH_LONG).show();
+
+
+                } else {
+                    // start an intent
+                    Log.d(TAG, "user is not null here");
+//                    Intent intent = new Intent(LoginActivity.this, DispatchActivity.class);
+//                    intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+//                    startActivity(intent);
+                    onLoginSuccess();
+
+                }
+            }
+        });
 
         // TODO: Implement your own authentication logic here.
-
+        Log.d(TAG, "I've been here");
         new android.os.Handler().postDelayed(
                 new Runnable() {
                     public void run() {
                         // On complete call either onLoginSuccess or onLoginFailed
-                        onLoginSuccess();
+//                        onLoginSuccess();
                         // onLoginFailed();
+                        _loginButton.setEnabled(true);
                         progressDialog.dismiss();
+
                     }
                 }, 3000);
     }

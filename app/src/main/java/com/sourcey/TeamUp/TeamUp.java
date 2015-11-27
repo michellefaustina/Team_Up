@@ -1,6 +1,7 @@
 package com.sourcey.TeamUp;
 
 import android.app.Application;
+import android.os.Bundle;
 
 import com.parse.Parse;
 import com.parse.ParseObject;
@@ -10,7 +11,9 @@ import com.parse.ParseClassName;
  * Created by Michelle on 11/24/15.
  */
 public class TeamUp extends Application {
-    public void onCreate () {
+
+    public void onCreate() {
+        super.onCreate();
         // Enable Local Datastore.
         Parse.enableLocalDatastore(this);
 
