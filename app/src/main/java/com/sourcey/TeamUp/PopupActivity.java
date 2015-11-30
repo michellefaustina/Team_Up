@@ -1,6 +1,7 @@
 package com.sourcey.TeamUp;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
@@ -18,6 +19,8 @@ import android.app.AlertDialog;
 import java.text.ParseException;
 import butterknife.InjectView;
 import com.parse.ParseObject;
+import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 
 public class PopupActivity extends Activity{
@@ -62,9 +65,8 @@ public class PopupActivity extends Activity{
                     createFailed();
                     return;
                 }
-                Intent intent = new Intent(getApplicationContext(), AvailableTimeActivity.class);
-                startActivity(intent);
             }
+
         });
 
 
