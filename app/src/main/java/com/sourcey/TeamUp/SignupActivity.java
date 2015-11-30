@@ -127,7 +127,7 @@ public class SignupActivity extends AppCompatActivity {
             public void done(com.parse.ParseException e) {
                 if (e != null) {
                     //error
-                    _signupButton.setEnabled(false);
+//                    _signupButton.setEnabled(false);
                     Toast.makeText(SignupActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
 
 

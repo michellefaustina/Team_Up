@@ -132,10 +132,36 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:inputType="time"
+                android:inputType="datetime"
                 android:ems="10"
                 android:id="@+id/time"
                 android:hint="00:00"
+                android:textColorHint="#7d393939"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingTop="17dp">
+
+            <TextView
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Date:"
+                android:textSize="17sp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:inputType="date"
+                android:ems="10"
+                android:id="@+id/date"
+                android:hint="mm/dd/yyyy"
                 android:textColorHint="#7d393939"
                 android:textSize="15sp" />
 
