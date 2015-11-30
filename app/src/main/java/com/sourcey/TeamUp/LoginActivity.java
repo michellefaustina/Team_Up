@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
 
-    @InjectView(R.id.input_email) EditText _emailText;
+    @InjectView(R.id.input_name) EditText _nameText;
     @InjectView(R.id.input_password) EditText _passwordText;
     @InjectView(R.id.btn_login) Button _loginButton;
     @InjectView(R.id.link_signup) TextView _signupLink;
@@ -73,22 +73,27 @@ public class LoginActivity extends AppCompatActivity {
         progressDialog.setMessage("Authenticating...");
         progressDialog.show();
 
-        ParseUser.logInInBackground(_emailText.getText().toString(), _passwordText.getText().toString(), new LogInCallback() {
+        ParseUser.logInInBackground(_nameText.getText().toString(), _passwordText.getText().toString(), new LogInCallback() {
             public void done(ParseUser user, ParseException e) {
-                if (user == null) {
-                    //not in cloud
-                    Log.d(TAG, "user is null here");
-                    Toast.makeText(LoginActivity.this, "Email address is not registered!", Toast.LENGTH_LONG).show();
-
+                if (e != null) {
+                    //error
+                    Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
 
                 } else {
                     // start an intent
-                    Log.d(TAG, "user is not null here");
+
 //                    Intent intent = new Intent(LoginActivity.this, DispatchActivity.class);
 //                    intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
 //                    startActivity(intent);
-                    onLoginSuccess();
 
+                    if ((!user.getBoolean("emailVerified"))) {
+                        Toast.makeText(LoginActivity.this, "Please first Verify your UCSD email address", Toast.LENGTH_LONG).show();
+
+
+                    } else {
+                        onLoginSuccess();
+
+                    }
                 }
             }
         });
@@ -105,7 +110,7 @@ public class LoginActivity extends AppCompatActivity {
                         progressDialog.dismiss();
 
                     }
-                }, 3000);
+                }, 3);
     }
 
 
@@ -143,14 +148,14 @@ public class LoginActivity extends AppCompatActivity {
     public boolean validate() {
         boolean valid = true;
 
-        String email = _emailText.getText().toString();
+        String email = _nameText.getText().toString();
         String password = _passwordText.getText().toString();
 
-        if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            _emailText.setError("enter a valid email address");
+        if (email.isEmpty() ) {
+            _nameText.setError("Name field should not be blank");
             valid = false;
         } else {
-            _emailText.setError(null);
+            _nameText.setError(null);
         }
 
         if (password.isEmpty() || password.length() < 4 || password.length() > 10) {

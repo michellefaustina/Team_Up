@@ -133,59 +133,71 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:paddingTop="20dp">
+        <!--<LinearLayout-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="60dp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:gravity="center"-->
+            <!--android:paddingTop="20dp">-->
 
-            <TextView
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Password Change:"
-                android:textSize="20sp" />
+            <!--<TextView-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:text="Password Change:"-->
+                <!--android:textSize="20sp" />-->
 
-            <EditText
-                android:gravity="center"
-                android:hint="New One"
-                android:textSize="16sp"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:inputType="textPassword"
-                android:ems="10"
-                android:id="@+id/editText3" />
+            <!--<EditText-->
+                <!--android:gravity="center"-->
+                <!--android:hint="New One"-->
+                <!--android:textSize="16sp"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="60dp"-->
+                <!--android:inputType="textPassword"-->
+                <!--android:ems="10"-->
+                <!--android:id="@+id/editText3" />-->
 
-        </LinearLayout>
+        <!--</LinearLayout>-->
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:paddingTop="20dp">
+        <!--<LinearLayout-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="60dp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:gravity="center"-->
+            <!--android:paddingTop="20dp">-->
 
-            <TextView
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Confirm Password:"
-                android:textSize="20sp" />
+            <!--<TextView-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:text="Confirm Password:"-->
+                <!--android:textSize="20sp" />-->
 
-            <EditText
-                android:gravity="center"
-                android:hint="Retype"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:inputType="textPassword"
-                android:ems="10"
-                android:id="@+id/editText4" />
+            <!--<EditText-->
+                <!--android:gravity="center"-->
+                <!--android:hint="Retype"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="60dp"-->
+                <!--android:inputType="textPassword"-->
+                <!--android:ems="10"-->
+                <!--android:id="@+id/editText4" />-->
 
-        </LinearLayout>
+        <!--</LinearLayout>-->
         <!--logout button-->
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:text="Reset password"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:background="#4bb1ff"
+            android:id="@+id/btn_reset"/>
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

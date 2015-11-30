@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/primary"
+        android:text="A verification link has been sent to your email, please verify."
+        android:textSize="@dimen/navigation_padding_top_default"
+        android:textColor="@color/white"
+        android:textStyle="italic"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:layout_weight="1"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_verify"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:text="OK!"
+        android:textColor="@color/white"
+        android:background="#4bb1ff"
+        />
+</LinearLayout>
