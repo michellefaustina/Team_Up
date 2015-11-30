@@ -40,6 +40,7 @@ public class PopupActivity extends Activity{
         ImageButton backBtn = (ImageButton)findViewById(R.id.backBtn);
         final EditText className = (EditText)findViewById(R.id.className);
         final EditText time = (EditText)findViewById(R.id.time);
+        final EditText date = (EditText)findViewById(R.id.date);
         final EditText location = (EditText)findViewById(R.id.location);
         final EditText groupSize = (EditText)findViewById(R.id.groupSize);
 
@@ -62,6 +63,17 @@ public class PopupActivity extends Activity{
                     createFailed();
                     return;
                 }
+
+
+                // pass the test
+                Post p = new Post();
+                p.setClassName(className.getText().toString());
+                p.setDate(date.getText().toString());
+                p.setClassTime(time.getText().toString());
+                p.setGroupSize(groupSize.getText().toString());
+                p.setLocation(location.getText().toString());
+                 p.saveInBackground();
+
                 Intent intent = new Intent(getApplicationContext(), AvailableTimeActivity.class);
                 startActivity(intent);
             }

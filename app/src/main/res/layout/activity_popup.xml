@@ -212,7 +212,7 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:inputType="text"
+                android:inputType= "number"
                 android:ems="10"
                 android:id="@+id/groupSize"
                 android:hint="1"

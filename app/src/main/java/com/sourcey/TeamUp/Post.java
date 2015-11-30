@@ -5,9 +5,11 @@ import com.parse.ParseObject;
 
 @ParseClassName("Post")
 public class Post extends ParseObject{
-	/*
-	Fields for Post: Counter, Post Name, Location, Time, Description
-	*/
+
+
+    public Post(){
+
+    }
 
 	public String getClassName(){
 		return getString("Class Name");
@@ -50,13 +52,13 @@ public class Post extends ParseObject{
 		put("Date",groupSize);
 	}
 
-	public String getCurrentGroupSize(){
-		return getString("Current Group Size");
-	}
-
-	public void setCurrentGroupSize(String currentGroupSize){
-		put("Date",currentGroupSize);
-	}
+//	public String getCurrentGroupSize(){
+//		return getString("Current Group Size");
+//	}
+//
+//	public void setCurrentGroupSize(String currentGroupSize){
+//		put("Date",currentGroupSize);
+//	}
 
 
 //	public int getCounter(){
