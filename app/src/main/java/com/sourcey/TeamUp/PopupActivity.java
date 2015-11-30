@@ -15,9 +15,11 @@ import android.app.ProgressDialog;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.app.AlertDialog;
-import java.text.ParseException;
 import butterknife.InjectView;
+
+import com.parse.ParseException;
 import com.parse.ParseObject;
+import com.parse.SaveCallback;
 
 
 public class PopupActivity extends Activity{
@@ -38,7 +40,7 @@ public class PopupActivity extends Activity{
         getWindow().setLayout((int) (width * 0.85), (int) (height * 0.7));
 
         ImageButton backBtn = (ImageButton)findViewById(R.id.backBtn);
-        final EditText className = (EditText)findViewById(R.id.className);
+        final EditText className1 = (EditText)findViewById(R.id.className);
         final EditText time = (EditText)findViewById(R.id.time);
         final EditText date = (EditText)findViewById(R.id.date);
         final EditText location = (EditText)findViewById(R.id.location);
@@ -57,7 +59,7 @@ public class PopupActivity extends Activity{
         doneBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ifempty(className) || ifempty(time) ||ifempty(location) || ifempty(groupSize)) {
+                if (ifempty(className1) || ifempty(time) ||ifempty(location) || ifempty(groupSize)) {
                     Log.d(TAG, "if one is empty");
 
                     createFailed();
@@ -66,13 +68,33 @@ public class PopupActivity extends Activity{
 
 
                 // pass the test
-                Post p = new Post();
-                p.setClassName(className.getText().toString());
+//                Post p = new Post();
+
+//                p.saveEventually();
+
+                 Post p = new Post();
+                Log.d(TAG, "p");
+                Log.d(TAG, "cclassname");
                 p.setDate(date.getText().toString());
+                p.setClassName(className1.getText().toString());
                 p.setClassTime(time.getText().toString());
                 p.setGroupSize(groupSize.getText().toString());
                 p.setLocation(location.getText().toString());
-                 p.saveInBackground();
+                Log.d(TAG, "end");
+
+                p.saveInBackground(new SaveCallback() {
+                    @Override
+                    public void done(ParseException e) {
+                        if (e == null) {
+                            Log.d(TAG, "end1");
+                        } else {
+                            Toast.makeText(PopupActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                            Log.d(TAG, "end2");
+                        }
+                    }
+                });
+
+                Log.d(TAG, "after save");
 
                 Intent intent = new Intent(getApplicationContext(), AvailableTimeActivity.class);
                 startActivity(intent);

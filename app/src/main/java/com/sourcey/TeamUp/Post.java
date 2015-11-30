@@ -12,11 +12,11 @@ public class Post extends ParseObject{
     }
 
 	public String getClassName(){
-		return getString("Class Name");
+		return getString("ClassName");
 	}
 
 	public void setClassName(String className){
-		put("Class Name",className);
+		put("ClassName",className);
 	}
 
 	public String getLocation(){
@@ -45,11 +45,11 @@ public class Post extends ParseObject{
 
 
 	public String getGroupSize(){
-		return getString("Group Size");
+		return getString("GroupSize");
 	}
 
 	public void setGroupSize(String groupSize){
-		put("Date",groupSize);
+		put("GroupSize",groupSize);
 	}
 
 //	public String getCurrentGroupSize(){
