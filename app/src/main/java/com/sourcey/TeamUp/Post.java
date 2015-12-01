@@ -1,6 +1,7 @@
 package com.sourcey.TeamUp;
 
 import com.parse.ParseClassName;
+import com.parse.ParseException;
 import com.parse.ParseObject;
 
 @ParseClassName("Post")
@@ -9,16 +10,26 @@ public class Post extends ParseObject{
 	Fields for Post: Counter, Post Name, Location, Time, Description
 	*/
 
-	public String getClassName(){
-		return getString("Class Name");
+	public String getClassName() {
+		try {
+			return this.fetchIfNeeded().getString("ClassName");
+		} catch (ParseException e) {
+			e.printStackTrace();
+			return "";
+		}
 	}
 
 	public void setClassName(String className){
-		put("Class Name",className);
+		put("ClassName",className);
 	}
 
-	public String getLocation(){
-		return getString("Location");
+	public String getLocation()  {
+		try {
+			return this.fetchIfNeeded().getString("Location");
+		} catch (ParseException e) {
+			e.printStackTrace();
+			return "";
+		}
 	}
 
 	public void setLocation(String location){
@@ -26,7 +37,12 @@ public class Post extends ParseObject{
 	}
 
 	public String getClassTime(){
-		return getString("Time");
+		try {
+			return this.fetchIfNeeded().getString("Time");
+		} catch (ParseException e) {
+			e.printStackTrace();
+			return "";
+		}
 	}
 
 	public void setClassTime(String time){
@@ -34,7 +50,12 @@ public class Post extends ParseObject{
 	}
 
 	public String getDate(){
-		return getString("Date");
+		try {
+			return this.fetchIfNeeded().getString("Date");
+		} catch (ParseException e) {
+			e.printStackTrace();
+			return "";
+		}
 	}
 
 	public void setDate(String Date){
@@ -42,16 +63,26 @@ public class Post extends ParseObject{
 	}
 
 
-	public String getGroupSize(){
-		return getString("Group Size");
+	public String getGroupSize() {
+		try {
+			return this.fetchIfNeeded().getString("Group Size");
+		} catch (ParseException e) {
+			e.printStackTrace();
+			return "";
+		}
 	}
 
 	public void setGroupSize(String groupSize){
 		put("Date",groupSize);
 	}
 
-	public String getCurrentGroupSize(){
-		return getString("Current Group Size");
+	public String getCurrentGroupSize() {
+		try {
+			return this.fetchIfNeeded().getString("Current Group Size");
+		} catch (ParseException e) {
+			e.printStackTrace();
+			return "";
+		}
 	}
 
 	public void setCurrentGroupSize(String currentGroupSize){

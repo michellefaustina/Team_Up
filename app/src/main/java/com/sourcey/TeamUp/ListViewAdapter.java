@@ -61,7 +61,7 @@ public class ListViewAdapter extends BaseAdapter {
         final ViewHolder holder;
         if (view == null) {
             holder = new ViewHolder();
-            view = inflater.inflate(R.layout.activity_elementtimes, null);
+            view = inflater.inflate(R.layout.activity_elementtimes, parent, false);
             // Locate the TextViews in listview_item.xml
             holder.classname = (TextView) view.findViewById(R.id.classNameLabel);
             holder.time = (TextView) view.findViewById(R.id.timeLabel);

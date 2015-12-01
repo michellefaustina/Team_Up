@@ -4,11 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
+import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
@@ -29,6 +33,28 @@ public class AvailableTimeActivity extends Activity {
         setContentView(R.layout.activity_availabletime);
         // Execute RemoteDataTask AsyncTask
         new RemoteDataTask().execute();
+
+
+        ImageButton backBtn = (ImageButton)findViewById(R.id.backBtn);
+        ImageButton userBtn = (ImageButton)findViewById(R.id.userButton);
+
+        // Back
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //create button
+        userBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(getApplicationContext(), PopupActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     // RemoteDataTask AsyncTask
@@ -38,7 +64,7 @@ public class AvailableTimeActivity extends Activity {
             super.onPreExecute();
             // Create a progressdialog
             mProgressDialog = new ProgressDialog(AvailableTimeActivity.this);
-            // Set progressdialog title
+            //Set progressdialog title
             mProgressDialog.setTitle(null);
             // Set progressdialog message
             mProgressDialog.setMessage("Loading...");
@@ -51,26 +77,27 @@ public class AvailableTimeActivity extends Activity {
         protected Void doInBackground(Void... params) {
             // Create the array
             posts = new ArrayList<Post>();
-            try {
-                // Locate the class table named "Post" in Parse.com
-                ParseQuery<ParseObject> query = new ParseQuery<ParseObject>(
-                        "Post");
-                // Locate the column named "Counter" in Parse.com and order list
-                // by ascending
-                query.orderByAscending("Counter");
-                ob = query.find();
-                for (ParseObject country : ob) {
-                    Post map = new Post();
-                    map.setClassName((String) country.get("ClassName"));
-                    map.setDate((String) country.get("Date"));
-                    map.setLocation((String) country.get("Location"));
-                    map.setGroupSize((String) country.get("GroupSize"));
-                    posts.add(map);
+            // Locate the class table named "Post" in Parse.com
+            ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Post");
+            query.findInBackground(new FindCallback<ParseObject>() {
+                @Override
+                public void done(List<ParseObject> objects, ParseException e) {
+                    if (e == null) {
+                        for (ParseObject country : objects) {
+                            Post map = new Post();
+                            map.setClassName(country.getString("ClassName"));
+                            map.setDate(country.getString("Date"));
+                            map.setClassTime(country.getString("Time"));
+                            map.setLocation(country.getString("Location"));
+                            map.setGroupSize(country.getString("GroupSize"));
+                            posts.add(map);
+                        }
+                    } else {
+                        Log.e("Error", e.getMessage());
+                        e.printStackTrace();
+                    }
                 }
-            } catch (ParseException e) {
-                Log.e("Error", e.getMessage());
-                e.printStackTrace();
-            }
+            });
             return null;
         }
 
