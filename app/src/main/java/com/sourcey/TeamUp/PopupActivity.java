@@ -42,7 +42,6 @@ public class PopupActivity extends Activity{
         ImageButton backBtn = (ImageButton)findViewById(R.id.backBtn);
         final EditText className1 = (EditText)findViewById(R.id.className);
         final EditText time = (EditText)findViewById(R.id.time);
-        final EditText date = (EditText)findViewById(R.id.date);
         final EditText location = (EditText)findViewById(R.id.location);
         final EditText groupSize = (EditText)findViewById(R.id.groupSize);
 
@@ -75,9 +74,8 @@ public class PopupActivity extends Activity{
                  Post p = new Post();
                 Log.d(TAG, "p");
                 Log.d(TAG, "cclassname");
-                p.setDate(date.getText().toString());
+                p.setClassTimeDate(time.getText().toString());
                 p.setClassName(className1.getText().toString());
-                p.setClassTime(time.getText().toString());
                 p.setGroupSize(groupSize.getText().toString());
                 p.setLocation(location.getText().toString());
                 Log.d(TAG, "end");

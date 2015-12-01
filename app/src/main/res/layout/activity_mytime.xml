@@ -1,132 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:orientation="vertical"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--xmlns:tools="http://schemas.android.com/tools"-->
+<!--android:orientation="vertical"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
 
-tools:context=".MyTimeActivity">
+<!--tools:context=".MyTimeActivity">-->
 
-    <!-- Banner -->
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="83dp">
+    <!--&lt;!&ndash; Banner &ndash;&gt;-->
+    <!--<LinearLayout-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="83dp">-->
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:weightSum="1">
+        <!--<LinearLayout-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="fill_parent"-->
+            <!--android:weightSum="1">-->
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:background="#4bb1ff">
+            <!--<LinearLayout-->
+                <!--android:orientation="horizontal"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:gravity="center"-->
+                <!--android:background="#4bb1ff">-->
 
-                <ImageButton
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@mipmap/back_icon"
-                    android:id="@+id/backBtn"
-                    android:tint="#ffffff"
-                    android:background="#00000000" />
-            </LinearLayout>
+                <!--<ImageButton-->
+                    <!--android:layout_width="80dp"-->
+                    <!--android:layout_height="80dp"-->
+                    <!--android:src="@mipmap/back_icon"-->
+                    <!--android:id="@+id/backBtn"-->
+                    <!--android:tint="#ffffff"-->
+                    <!--android:background="#00000000" />-->
+            <!--</LinearLayout>-->
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="80dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:background="#4bb1ff">
+            <!--<LinearLayout-->
+                <!--android:orientation="horizontal"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="80dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:gravity="center"-->
+                <!--android:background="#4bb1ff">-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:textSize="30dp"
-                    android:typeface="normal"
-                    android:singleLine="false"
-                    android:ellipsize="none"
-                    android:layout_gravity="center"
-                    android:text="MY TIME" />
-            </LinearLayout>
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:textStyle="bold"-->
+                    <!--android:textSize="30dp"-->
+                    <!--android:typeface="normal"-->
+                    <!--android:singleLine="false"-->
+                    <!--android:ellipsize="none"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:text="MY TIME" />-->
+            <!--</LinearLayout>-->
 
-            <ImageView
-                android:layout_width="90dp"
-                android:layout_height="80dp"
-                android:layout_gravity="left"
-                android:src="@mipmap/compose_icon"
-                android:id="@+id/userButton"
-                android:background="#4bb1ff"
-                android:tintMode="src_in"
-                android:tint="#4bb1ff"/>
+            <!--<ImageView-->
+                <!--android:layout_width="90dp"-->
+                <!--android:layout_height="80dp"-->
+                <!--android:layout_gravity="left"-->
+                <!--android:src="@mipmap/compose_icon"-->
+                <!--android:id="@+id/userButton"-->
+                <!--android:background="#4bb1ff"-->
+                <!--android:tintMode="src_in"-->
+                <!--android:tint="#4bb1ff"/>-->
 
-        </LinearLayout>
-    </LinearLayout>
+        <!--</LinearLayout>-->
+    <!--</LinearLayout>-->
 
     <!-- Content -->
-    <ScrollView
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/ListOfTimes1"
-        android:background="#ffffff">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
 
+            <ListView
+                android:id="@+id/listview"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:id="@+id/time_section1"
-            android:layout_height="73dp"
-            android:paddingEnd="10dp"
-            android:paddingStart="10dp"
-            android:background="#eeeeee">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="CLASS NAME"
-                android:textColor="@color/black"
-                android:layout_gravity="center"
-                android:singleLine="true"
-                android:id="@+id/textView31"
-                android:editable="false" />
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:text="DETAIL"
-                android:id="@+id/detailButton"
-                android:textColor="@color/white"
-                android:background="#4fb3f5" />
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:textColor="@color/white"
-                android:text="QUIT"
-                android:id="@+id/quitButton"
-                android:background="#4fb3f5"
-                android:layout_marginLeft="14dp"/>
-        </LinearLayout>
-
-    </LinearLayout>
+        </RelativeLayout>
     </ScrollView>
 
-</LinearLayout>

@@ -27,21 +27,15 @@ public class Post extends ParseObject{
 		put("Location",location);
 	}
 
-	public String getClassTime(){
-		return getString("Time");
+	public String getClassTimeDate(){
+		return getString("TimeNdate");
 	}
 
-	public void setClassTime(String time){
-		put("Time",time);
+	public void setClassTimeDate(String timeNdate){
+		put("TimeNdate",timeNdate);
 	}
 
-	public String getDate(){
-		return getString("Date");
-	}
 
-	public void setDate(String Date){
-		put("Date",Date);
-	}
 
 
 	public String getGroupSize(){

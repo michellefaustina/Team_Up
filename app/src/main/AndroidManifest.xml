@@ -24,7 +24,7 @@
         </activity>
         <activity android:name=".SignupActivity" android:theme="@style/AppTheme.Dark" />
         <activity android:name=".AvailableTimeActivity" android:theme="@style/AppTheme.Light"/>
-        <activity android:name=".MyTimeActivity" android:theme="@style/AppTheme.Light"/>
+        <activity android:name=".MyTimeActivity" android:theme="@style/AppTheme.CustomTheme"/>
         <activity android:name=".ProfileActivity" android:theme="@style/AppTheme.Light"/>
         <activity android:name=".PopupActivity"/>
         <activity android:name=".DetailsATActivity"/>

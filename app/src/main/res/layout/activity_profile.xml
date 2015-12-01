@@ -12,203 +12,207 @@
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="83dp">
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:weightSum="1">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:weightSum="1">
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:background="#4bb1ff">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="#4bb1ff">
 
-        <ImageButton
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@mipmap/back_icon"
-            android:background="#00000000"
-            android:id="@+id/backBtn"
-            android:tint="#ffffff" />
+                <ImageButton
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@mipmap/back_icon"
+                    android:background="#00000000"
+                    android:id="@+id/backBtn"
+                    android:tint="#ffffff" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#4bb1ff">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="30dp"
+                    android:typeface="normal"
+                    android:singleLine="false"
+                    android:ellipsize="none"
+                    android:layout_gravity="center"
+                    android:text="PROFILE" />
+            </LinearLayout>
+
+            <!--Save Button-->
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="left"
+                android:src="@mipmap/save_icon"
+                android:id="@+id/saveButton"
+                android:background="#4bb1ff"
+                android:tintMode="src_in"
+                android:tint="#ffffff"/>
+
+        </LinearLayout>
+
     </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:background="#4bb1ff">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="30dp"
-            android:typeface="normal"
-            android:singleLine="false"
-            android:ellipsize="none"
-            android:layout_gravity="center"
-            android:text="PROFILE" />
-    </LinearLayout>
-
-    <!--Save Button-->
-    <ImageButton
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_gravity="left"
-        android:src="@mipmap/save_icon"
-        android:id="@+id/saveButton"
-        android:background="#4bb1ff"
-        android:tintMode="src_in"
-        android:tint="#ffffff"/>
-
-</LinearLayout>
-
-</LinearLayout>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingTop="20dp">
-
-
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:gravity="center"
+            android:layout_height="match_parent"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
             android:paddingTop="20dp">
 
-            <TextView
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Major Selection:"
-                android:textSize="20dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textCapWords"
-                android:text="CSE"
-                android:textSize="20sp"
-                android:gravity="center"
-                android:ems="10" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:paddingTop="20dp">
-
-            <TextView
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Class Selection:"
-                android:textSize="20sp" />
-
-            <EditText
-                android:gravity="center"
-                android:hint="CSE110"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:inputType="textCapCharacters"
-                android:ems="10"
-                android:id="@+id/editText2" />
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingTop="20dp">
 
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Major Selection:"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords"
+                    android:text="CSE"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:ems="10" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingTop="20dp">
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Class Selection:"
+                    android:textSize="20sp" />
+
+                <Spinner
+                    android:id="@+id/classSelection"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:ems="10"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:spinnerMode="dropdown"
+                    android:clickable="false"
+                    android:backgroundTint="#bbdde4" />
+
+
+            </LinearLayout>
+
+            <!--<LinearLayout-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="60dp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:gravity="center"-->
+            <!--android:paddingTop="20dp">-->
+
+            <!--<TextView-->
+            <!--android:layout_width="200dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:text="Password Change:"-->
+            <!--android:textSize="20sp" />-->
+
+            <!--<EditText-->
+            <!--android:gravity="center"-->
+            <!--android:hint="New One"-->
+            <!--android:textSize="16sp"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="60dp"-->
+            <!--android:inputType="textPassword"-->
+            <!--android:ems="10"-->
+            <!--android:id="@+id/editText3" />-->
+
+            <!--</LinearLayout>-->
+
+            <!--<LinearLayout-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="60dp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:gravity="center"-->
+            <!--android:paddingTop="20dp">-->
+
+            <!--<TextView-->
+            <!--android:layout_width="200dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:text="Confirm Password:"-->
+            <!--android:textSize="20sp" />-->
+
+            <!--<EditText-->
+            <!--android:gravity="center"-->
+            <!--android:hint="Retype"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="60dp"-->
+            <!--android:inputType="textPassword"-->
+            <!--android:ems="10"-->
+            <!--android:id="@+id/editText4" />-->
+
+            <!--</LinearLayout>-->
+            <!--logout button-->
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:text="Reset password"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:background="#4bb1ff"
+                android:id="@+id/btn_reset"/>
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:text="Logout"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:background="#4bb1ff"
+                android:id="@+id/btn_logout"/>
         </LinearLayout>
-
-        <!--<LinearLayout-->
-            <!--android:orientation="horizontal"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="60dp"-->
-            <!--android:layout_gravity="center"-->
-            <!--android:gravity="center"-->
-            <!--android:paddingTop="20dp">-->
-
-            <!--<TextView-->
-                <!--android:layout_width="200dp"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="center"-->
-                <!--android:text="Password Change:"-->
-                <!--android:textSize="20sp" />-->
-
-            <!--<EditText-->
-                <!--android:gravity="center"-->
-                <!--android:hint="New One"-->
-                <!--android:textSize="16sp"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="60dp"-->
-                <!--android:inputType="textPassword"-->
-                <!--android:ems="10"-->
-                <!--android:id="@+id/editText3" />-->
-
-        <!--</LinearLayout>-->
-
-        <!--<LinearLayout-->
-            <!--android:orientation="horizontal"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="60dp"-->
-            <!--android:layout_gravity="center"-->
-            <!--android:gravity="center"-->
-            <!--android:paddingTop="20dp">-->
-
-            <!--<TextView-->
-                <!--android:layout_width="200dp"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="center"-->
-                <!--android:text="Confirm Password:"-->
-                <!--android:textSize="20sp" />-->
-
-            <!--<EditText-->
-                <!--android:gravity="center"-->
-                <!--android:hint="Retype"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="60dp"-->
-                <!--android:inputType="textPassword"-->
-                <!--android:ems="10"-->
-                <!--android:id="@+id/editText4" />-->
-
-        <!--</LinearLayout>-->
-        <!--logout button-->
-
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="40dp"
-            android:text="Reset password"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:background="#4bb1ff"
-            android:id="@+id/btn_reset"/>
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="40dp"
-            android:text="Logout"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:background="#4bb1ff"
-            android:id="@+id/btn_logout"/>
-    </LinearLayout>
     </ScrollView>
 </LinearLayout>

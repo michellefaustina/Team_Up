@@ -97,6 +97,7 @@ import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -110,13 +111,20 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.parse.FindCallback;
 import com.parse.ParseQuery;
+
+import com.parse.FindCallback;
+import com.parse.ParseObject;
+import com.parse.ParseRelation;
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import com.parse.ParseAnalytics;
+import com.parse.ParseException;
+
 
 //Created by Michelle on 10/30/15.
 
@@ -132,14 +140,14 @@ public class AvailableTimeActivity extends Activity {
         setContentView(R.layout.activity_availabletime);
 
         //addTime();
-        ListView listView = (ListView)findViewById(R.id.listv);
-        String[] counts ={"CLASS NAME"};
+        ListView listView = (ListView) findViewById(R.id.listv);
+        String[] counts = {"CLASS NAME"};
 //        for(int i = 0; i < 30; i++)
 //        {
 //            counts[i] = "CLASS NAME" + i;
 //        }
         ArrayList<String> arrayList = new ArrayList<>(Arrays.asList(counts));
-        ArrayAdapter<String> arrayAdapter = new CustomAdapter(this,R.layout.activity_elementtimes,arrayList);
+        ArrayAdapter<String> arrayAdapter = new CustomAdapter(this, R.layout.activity_elementtimes, arrayList);
         listView.setAdapter(arrayAdapter);
 
 //        ParseQuery<Post> query = new ParseQuery<Post> ("Post");
@@ -161,11 +169,11 @@ public class AvailableTimeActivity extends Activity {
 //            }
 //        });
 
-        ImageButton backBtn = (ImageButton)findViewById(R.id.backBtn);
-      ImageButton userBtn = (ImageButton)findViewById(R.id.userButton);
+        ImageButton backBtn = (ImageButton) findViewById(R.id.backBtn);
+        ImageButton userBtn = (ImageButton) findViewById(R.id.userButton);
 
 
-         //Back
+        //Back
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
@@ -174,12 +182,12 @@ public class AvailableTimeActivity extends Activity {
             }
         });
 
-       // create button
-        userBtn.setOnClickListener(new View.OnClickListener(){
+        // create button
+        userBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
                 Intent intent = new Intent(getApplicationContext(), PopupActivity.class);
-              startActivity(intent);
+                startActivity(intent);
             }
         });
 
@@ -187,8 +195,7 @@ public class AvailableTimeActivity extends Activity {
     }
 
 
-
-    private class CustomAdapter extends ArrayAdapter<String>{
+    private class CustomAdapter extends ArrayAdapter<String> {
 
         private int layout;
 
@@ -200,14 +207,14 @@ public class AvailableTimeActivity extends Activity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             ViewHolder holder = null;
-            if(convertView == null){
+            if (convertView == null) {
                 LayoutInflater inflater = LayoutInflater.from(getContext());
-                convertView = inflater.inflate(layout,parent,false);
+                convertView = inflater.inflate(layout, parent, false);
 
                 ViewHolder view = new ViewHolder();
-                view.title = (TextView)convertView.findViewById(R.id.textView32);
-                view.btnDetail = (Button)convertView.findViewById(R.id.detailBtn);
-                view.btnSignup = (Button)convertView.findViewById(R.id.signUpButton);
+                view.title = (TextView) convertView.findViewById(R.id.textView32);
+                view.btnDetail = (Button) convertView.findViewById(R.id.detailBtn);
+                view.btnSignup = (Button) convertView.findViewById(R.id.signUpButton);
                 final Button btn = view.btnSignup;
                 convertView.setTag(view);
                 view.btnDetail.setOnClickListener(new View.OnClickListener() {
@@ -222,25 +229,59 @@ public class AvailableTimeActivity extends Activity {
                 view.btnSignup.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View arg0) {
+
+                        // set up our query for the Book object
+                        ParseRelation<ParseObject> relation = ParseUser.getCurrentUser().getRelation("Post");
+                        relation.add(post);
+                        ParseUser.getCurrentUser().saveInBackground();
                         btn.setBackgroundColor(Color.argb(25, 0, 0, 1));
+
                     }
                 });
-            }
-            else
-            {
-                holder = (ViewHolder)convertView.getTag();
+            } else {
+                holder = (ViewHolder) convertView.getTag();
                 holder.title.setText(getItem(position));
             }
             return convertView;
         }
     }
 
-    public class ViewHolder{
+    public class ViewHolder {
         TextView title;
         Button btnDetail;
         Button btnSignup;
     }
+
+
+    public void updateMytimePost() {
+        ParseQuery mytimepostQuery = ParseQuery.getQuery("Mytimepost");
+
+// configure any constraints on your query...
+        mytimepostQuery.whereEqualTo("User", ParseUser.getCurrentUser());
+
+// tell the query to fetch all of the Author objects along with the Book
+        mytimepostQuery.include("User");
+
+// execute the query
+        mytimepostQuery.findInBackground(new FindCallback<ParseObject>() {
+
+            @Override
+            public void done(List<ParseObject> postList, ParseException e) {
+                if (e == null) {
+                    // If there are results, update the list of posts
+                    // and notify the adapter
+                    posts.clear();
+                    for (ParseObject post : postList) {
+                        posts.add(post.getString("textContent"));
+                    }
+                    ((ArrayAdapter<String>) getListAdapter())
+                            .notifyDataSetChanged();
+                } else {
+                    Log.d("Post retrieval", "Error: " + e.getMessage());
+                }
+
+            }
+
+        });
+    }
 }
-
-
-

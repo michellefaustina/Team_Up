@@ -55,7 +55,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="51dp"
+            android:layout_height="41dp"
             android:layout_gravity="center"
             android:gravity="center"
             android:paddingTop="17dp">
@@ -80,7 +80,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="51dp"
+            android:layout_height="41dp"
             android:layout_gravity="center"
             android:gravity="center"
             android:paddingTop="17dp">
@@ -105,7 +105,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="51dp"
+            android:layout_height="41dp"
             android:layout_gravity="center"
             android:gravity="center"
             android:paddingTop="17dp">
@@ -130,7 +130,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="51dp"
+            android:layout_height="41dp"
             android:layout_gravity="center"
             android:gravity="center"
             android:paddingTop="17dp">
@@ -155,7 +155,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="51dp"
+            android:layout_height="41dp"
             android:layout_gravity="center"
             android:gravity="center"
             android:paddingTop="17dp">
@@ -180,7 +180,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="51dp"
+            android:layout_height="41dp"
             android:layout_gravity="center"
             android:gravity="center"
             android:paddingTop="17dp">
