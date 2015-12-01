@@ -19,6 +19,7 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
 public class AvailableTimeActivity extends Activity {
+    private static final String TAG = "AvailableTimeActivity";
     // Declare Variables
     ListView listview;
     List<ParseObject> ob;
@@ -35,8 +36,8 @@ public class AvailableTimeActivity extends Activity {
         new RemoteDataTask().execute();
 
 
-        ImageButton backBtn = (ImageButton)findViewById(R.id.backBtn);
-        ImageButton userBtn = (ImageButton)findViewById(R.id.userButton);
+        ImageButton backBtn = (ImageButton) findViewById(R.id.backBtn);
+        ImageButton userBtn = (ImageButton) findViewById(R.id.userButton);
 
         // Back
         backBtn.setOnClickListener(new View.OnClickListener() {
@@ -48,7 +49,7 @@ public class AvailableTimeActivity extends Activity {
         });
 
         //create button
-        userBtn.setOnClickListener(new View.OnClickListener(){
+        userBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
                 Intent intent = new Intent(getApplicationContext(), PopupActivity.class);
@@ -75,6 +76,7 @@ public class AvailableTimeActivity extends Activity {
 
         @Override
         protected Void doInBackground(Void... params) {
+            Log.d(TAG,"in background");
             // Create the array
             posts = new ArrayList<Post>();
             // Locate the class table named "Post" in Parse.com
@@ -86,8 +88,7 @@ public class AvailableTimeActivity extends Activity {
                         for (ParseObject country : objects) {
                             Post map = new Post();
                             map.setClassName(country.getString("ClassName"));
-                            map.setDate(country.getString("Date"));
-                            map.setClassTime(country.getString("Time"));
+                            map.setClassTimeDate(country.getString("TimeNDate"));
                             map.setLocation(country.getString("Location"));
                             map.setGroupSize(country.getString("GroupSize"));
                             posts.add(map);
@@ -114,3 +115,4 @@ public class AvailableTimeActivity extends Activity {
         }
     }
 }
+

@@ -36,7 +36,7 @@ public class ListViewAdapter extends BaseAdapter {
 
     public class ViewHolder {
         TextView classname;
-        TextView time;
+        TextView datetime;
         TextView location;
         TextView groupsize;
         Button signup;
@@ -64,7 +64,7 @@ public class ListViewAdapter extends BaseAdapter {
             view = inflater.inflate(R.layout.activity_elementtimes, parent, false);
             // Locate the TextViews in listview_item.xml
             holder.classname = (TextView) view.findViewById(R.id.classNameLabel);
-            holder.time = (TextView) view.findViewById(R.id.timeLabel);
+            holder.datetime = (TextView) view.findViewById(R.id.timeLabel);
             holder.location = (TextView) view.findViewById(R.id.locationLabel);
             // Locate the ImageView in listview_item.xml
             holder.groupsize = (TextView) view.findViewById(R.id.groupSizeLabel);
@@ -75,7 +75,7 @@ public class ListViewAdapter extends BaseAdapter {
         }
         // Set the results into TextViews
         holder.classname.setText(postList.get(position).getClassName());
-        holder.time.setText(postList.get(position).getClassTime() + postList.get(position).getDate());
+        holder.datetime.setText(postList.get(position).getClassTimeDate());
         holder.location.setText(postList.get(position)
                 .getLocation());
         holder.groupsize.setText(postList.get(position).getGroupSize());
@@ -92,7 +92,7 @@ public class ListViewAdapter extends BaseAdapter {
                         (postList.get(position).getClassName()));
                 // Pass all data country
                 intent.putExtra("Time",
-                        (postList.get(position).getClassTime() + postList.get(position).getDate()));
+                        (postList.get(position).getClassTimeDate()));
                 // Pass all data population
                 intent.putExtra("Location",
                         (postList.get(position).getLocation()));

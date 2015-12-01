@@ -6,113 +6,85 @@ import com.parse.ParseObject;
 
 @ParseClassName("Post")
 public class Post extends ParseObject{
-	/*
-	Fields for Post: Counter, Post Name, Location, Time, Description
-	*/
 
-	public String getClassName() {
-		try {
-			return this.fetchIfNeeded().getString("ClassName");
-		} catch (ParseException e) {
-			e.printStackTrace();
-			return "";
-		}
+
+	public Post(){
+
 	}
+
+	public String getClassName(){
+        try {
+            return fetchIfNeeded().getString("ClassName");
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return "";
+        }
+    }
 
 	public void setClassName(String className){
 		put("ClassName",className);
 	}
 
-	public String getLocation()  {
-		try {
-			return this.fetchIfNeeded().getString("Location");
-		} catch (ParseException e) {
-			e.printStackTrace();
-			return "";
-		}
+	public String getLocation(){
+		return getString("Location");
 	}
 
 	public void setLocation(String location){
 		put("Location",location);
 	}
 
-	public String getClassTime(){
-		try {
-			return this.fetchIfNeeded().getString("Time");
-		} catch (ParseException e) {
-			e.printStackTrace();
-			return "";
-		}
+	public String getClassTimeDate(){
+		return getString("TimeNdate");
 	}
 
-	public void setClassTime(String time){
-		put("Time",time);
-	}
-
-	public String getDate(){
-		try {
-			return this.fetchIfNeeded().getString("Date");
-		} catch (ParseException e) {
-			e.printStackTrace();
-			return "";
-		}
-	}
-
-	public void setDate(String Date){
-		put("Date",Date);
+	public void setClassTimeDate(String timeNdate){
+		put("TimeNdate",timeNdate);
 	}
 
 
-	public String getGroupSize() {
-		try {
-			return this.fetchIfNeeded().getString("Group Size");
-		} catch (ParseException e) {
-			e.printStackTrace();
-			return "";
-		}
+
+
+	public String getGroupSize(){
+		return getString("GroupSize");
 	}
 
 	public void setGroupSize(String groupSize){
-		put("Date",groupSize);
+		put("GroupSize",groupSize);
 	}
 
-	public String getCurrentGroupSize() {
-		try {
-			return this.fetchIfNeeded().getString("Current Group Size");
-		} catch (ParseException e) {
-			e.printStackTrace();
-			return "";
-		}
-	}
+ public String getCurrentGroupSize(){
+    return getString("Current Group Size");
+ }
 
-	public void setCurrentGroupSize(String currentGroupSize){
-		put("Date",currentGroupSize);
-	}
+ public void setCurrentGroupSize(String currentGroupSize){
+    put("Date",currentGroupSize);
+ }
 
-	public int getCounter(){
-		String toParse = getString("Counter");
-		int toReturn = Integer.parseInt(toParse);
-		return toReturn;
-	}
 
-	public void incrementCounter(String toParse){
-		int toReturn = Integer.parseInt(toParse);
-		toReturn++;
-		toParse = Integer.toString(toReturn);
-		put("Counter",toParse);
-	}
+ public int getCounter(){
+    String toParse = getString("Counter");
+    int toReturn = Integer.parseInt(toParse);
+    return toReturn;
+ }
 
-	public void decrementCoutner(String toParse){
-		int toReturn = Integer.parseInt(toParse);
-		toReturn--;
-		toParse = Integer.toString(toReturn);
-		put("Counter",toParse);
-	}
+ public void incrementCounter(String toParse){
+    int toReturn = Integer.parseInt(toParse);
+    toReturn++;
+    toParse = Integer.toString(toReturn);
+    put("Counter",toParse);
+ }
 
-	public void resetCounter(){
-		int toReturn = 0;
-		String toParse = Integer.toString(toReturn);
-		put("Counter",toParse);
-	}
+ public void decrementCoutner(String toParse){
+    int toReturn = Integer.parseInt(toParse);
+    toReturn--;
+    toParse = Integer.toString(toReturn);
+    put("Counter",toParse);
+ }
+
+ public void resetCounter(){
+    int toReturn = 0;
+    String toParse = Integer.toString(toReturn);
+    put("Counter",toParse);
+ }
 
 }
