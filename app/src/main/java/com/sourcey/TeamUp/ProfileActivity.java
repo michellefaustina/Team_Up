@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
+import android.widget.Spinner;
+import android.widget.ArrayAdapter;
 
 import java.util.logging.*;
 import com.parse.Parse;
@@ -91,6 +93,12 @@ public class ProfileActivity extends AppCompatActivity {
                         });
             }
         });
+
+        // Drop down menu for class selection
+        Spinner dropdown = (Spinner)findViewById(R.id.classSelection);
+        String[] items = new String[]{"CSE 110", "CSE 100", "CSE 101"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        dropdown.setAdapter(adapter);
 //
 //                Intent intent = new Intent(getApplicationContext(), .class);
 //                startActivity(intent);

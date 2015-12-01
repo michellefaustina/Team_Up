@@ -122,14 +122,17 @@
                 android:text="Class Selection:"
                 android:textSize="20sp" />
 
-            <EditText
-                android:gravity="center"
-                android:hint="CSE110"
-                android:layout_width="wrap_content"
+            <Spinner
+                android:id="@+id/classSelection"
+                android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:inputType="textCapCharacters"
+                android:background="@android:drawable/btn_dropdown"
                 android:ems="10"
-                android:id="@+id/editText2" />
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:spinnerMode="dropdown"
+                android:clickable="false" />
+
 
         </LinearLayout>
 
