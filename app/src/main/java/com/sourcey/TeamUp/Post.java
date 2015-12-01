@@ -58,31 +58,30 @@ public class Post extends ParseObject{
 		put("Date",currentGroupSize);
 	}
 
+	public int getCounter(){
+		String toParse = getString("Counter");
+		int toReturn = Integer.parseInt(toParse);
+		return toReturn;
+	}
 
-//	public int getCounter(){
-//		String toParse = getString("Counter");
-//		int toReturn = Integer.parseInt(toParse);
-//		return toReturn;
-//	}
-//
-//	public void incrementCounter(String toParse){
-//		int toReturn = Integer.parseInt(toParse);
-//		toReturn++;
-//		toParse = Integer.toString(toReturn);
-//		put("Counter",toParse);
-//	}
-//
-//	public void decrementCoutner(String toParse){
-//		int toReturn = Integer.parseInt(toParse);
-//		toReturn--;
-//		toParse = Integer.toString(toReturn);
-//		put("Counter",toParse);
-//	}
-//
-//	public void resetCounter(){
-//		int toReturn = 0;
-//		String toParse = Integer.toString(toReturn);
-//		put("Counter",toParse);
-//	}
+	public void incrementCounter(String toParse){
+		int toReturn = Integer.parseInt(toParse);
+		toReturn++;
+		toParse = Integer.toString(toReturn);
+		put("Counter",toParse);
+	}
+
+	public void decrementCoutner(String toParse){
+		int toReturn = Integer.parseInt(toParse);
+		toReturn--;
+		toParse = Integer.toString(toReturn);
+		put("Counter",toParse);
+	}
+
+	public void resetCounter(){
+		int toReturn = 0;
+		String toParse = Integer.toString(toReturn);
+		put("Counter",toParse);
+	}
 
 }
