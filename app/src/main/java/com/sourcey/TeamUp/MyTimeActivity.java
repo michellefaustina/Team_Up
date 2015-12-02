@@ -109,7 +109,7 @@ public class MyTimeActivity extends AppCompatActivity {
             // Locate the listview in listview_main.xml
             listView = (ListView) findViewById(R.id.listv);
             // Pass the results into ListViewAdapter.java
-            adapter = new ListViewAdapter(MyTimeActivity.this, posts);
+            adapter = new ListViewAdapter(MyTimeActivity.this, R.layout.activity_elementmytimes,posts);
             // Binds the Adapter to the ListView
             listView.setAdapter(adapter);
             // Close the progressdialog
