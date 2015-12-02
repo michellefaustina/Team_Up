@@ -38,7 +38,7 @@ public class MyTimeActivity extends AppCompatActivity {
     List<ParseObject> ob;
     ProgressDialog mProgressDialog;
     ListViewAdapter adapter;
-    private List<AvailableTimePost> posts;
+    private List<AvailableTimePost> posts = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -82,43 +82,28 @@ public class MyTimeActivity extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... params) {
             // Create the array
-            Log.d(TAG, "async do in bg");
+            Log.d(TAG,"async do in bg");
             posts = new ArrayList<AvailableTimePost>();
-                // Locate the class table named "Country" in Parse.com
-                ParseObject user = ParseUser.getCurrentUser();
-                ParseRelation relation = user.getRelation("Mypost");
-                ParseQuery<ParseObject> q = relation.getQuery();
-            try {
-                ob = q.find();
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-            q.findInBackground(new FindCallback<ParseObject>() {
-                    @Override
-                    public void done(List<ParseObject> objects, ParseException e) {
-                        if (e == null) {
-                            Log.d(TAG, "before loop");
-                            for (ParseObject country : ob) {
-                                // Locate images in flag column
-                                Toast.makeText(MyTimeActivity.this, "in for loop", Toast.LENGTH_LONG);
-                                AvailableTimePost map = new AvailableTimePost();
-                                try {
-                                    map.setClassName(country.fetchIfNeeded().getString("Course"));
-                                } catch (ParseException e1) {
-                                    e1.printStackTrace();
-                                    map.setClassTime("");
-                                }
-                                map.setClassTime(country.getString("Timedate"));
-                                map.setLocation(country.getString("Location"));
-                                map.setGroupSize(country.getString("Groupsize"));
-                                posts.add(map);
-                            }
-                        } else {
-                            Log.e("Error", e.getMessage());
-                            e.printStackTrace();
-                        }
-                    }
-                });
+            // Locate the class table named "Country" in Parse.com
+                ParseUser user = ParseUser.getCurrentUser();
+                ParseRelation relation = user.getRelation("Post");
+                ParseQuery<ParseObject> query = ParseQuery.getQuery("_User");
+                query.include("Post");
+                // Locate the column named "ranknum" in Parse.com and order list
+                // by ascending
+                //query.orderByAscending("Course");
+                ob = user.getList("Post");
+                Log.d(TAG,"before loop");
+                for (ParseObject country : ob) {
+                    // Locate images in flag column
+                    AvailableTimePost map = new AvailableTimePost();
+                    Log.d(TAG,"in loop");
+                    map.setClassName(country.getString("Course"));
+                    map.setClassTime(country.getString("Timedate"));
+                    map.setLocation(country.getString("Location"));
+                    map.setGroupSize(country.getString("Groupsize"));
+                    posts.add(map);
+                }
             return null;
         }
 
@@ -127,12 +112,25 @@ public class MyTimeActivity extends AppCompatActivity {
             // Locate the listview in listview_main.xml
             listView = (ListView) findViewById(R.id.myTimes);
             // Pass the results into ListViewAdapter.java
-            adapter = new ListViewAdapter(MyTimeActivity.this, R.layout.activity_elementmytimes,posts);
-            // Binds the Adapter to the ListView
-            listView.setAdapter(adapter);
-            // Close the progressdialog
-            mProgressDialog.dismiss();
+            if(posts == null){
+                mProgressDialog.dismiss();
+            }else {
+                adapter = new ListViewAdapter(MyTimeActivity.this, R.layout.activity_elementmytimes, posts);
+                //adapter.setCustomButtonListner(MyTimeActivity.this);
+                // Binds the Adapter to the ListView
+                listView.setAdapter(adapter);
+                // Close the progressdialog
+                mProgressDialog.dismiss();
+            }
         }
     }
+
+   // @Override
+   // public void onButtonClickListner(int position, Object value) {
+     //   Toast.makeText(MyTimeActivity.this, "Quited Group!",
+       //         Toast.LENGTH_SHORT).show();
+
+    //}
+
 }
 
