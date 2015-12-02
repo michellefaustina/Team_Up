@@ -5,12 +5,16 @@ import java.util.List;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -18,7 +22,7 @@ import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
-public class AvailableTimeActivity extends Activity {
+public class AvailableTimeActivity extends Activity implements ListViewAdapter.customButtonListener {
     private static final String TAG = "AvailableTimeActivity";
     // Declare Variables
     ListView listview;
@@ -34,6 +38,7 @@ public class AvailableTimeActivity extends Activity {
         setContentView(R.layout.activity_availabletime);
         // Execute RemoteDataTask AsyncTask
         new RemoteDataTask().execute();
+
 
 
         ImageButton backBtn = (ImageButton) findViewById(R.id.backBtn);
@@ -110,11 +115,21 @@ public class AvailableTimeActivity extends Activity {
             listview = (ListView) findViewById(R.id.listv);
             // Pass the results into ListViewAdapter.java
             adapter = new ListViewAdapter(AvailableTimeActivity.this, posts);
+            adapter.setCustomButtonListner(AvailableTimeActivity.this);
             // Binds the Adapter to the ListView
             listview.setAdapter(adapter);
             // Close the progressdialog
             mProgressDialog.dismiss();
         }
     }
-}
+
+    @Override
+    public void onButtonClickListner(int position, Object value) {
+        Toast.makeText(AvailableTimeActivity.this, "Joined Group!",
+                Toast.LENGTH_SHORT).show();
+
+    }
+
+
+    }
 
