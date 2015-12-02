@@ -11,7 +11,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/classNameLabel"
+            android:id="@+id/classNameLabel1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="class_name:"
@@ -20,7 +20,7 @@
             />
 
         <TextView
-            android:id="@+id/className"
+            android:id="@+id/className1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/classNameLabel"
@@ -29,7 +29,7 @@
             />
 
         <TextView
-            android:id="@+id/timeLabel"
+            android:id="@+id/timeLabel1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/classNameLabel"
@@ -40,7 +40,7 @@
             />
 
         <TextView
-            android:id="@+id/time"
+            android:id="@+id/time1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/className"
@@ -51,7 +51,7 @@
             />
 
         <TextView
-            android:id="@+id/locationLabel"
+            android:id="@+id/locationLabel1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/timeLabel"
@@ -62,7 +62,7 @@
             />
 
         <TextView
-            android:id="@+id/location"
+            android:id="@+id/location1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/time"
@@ -73,7 +73,7 @@
             />
 
         <TextView
-            android:id="@+id/groupSizeLabel"
+            android:id="@+id/groupSizeLabel1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/locationLabel"
@@ -84,7 +84,7 @@
             />
 
         <TextView
-            android:id="@+id/groupSize"
+            android:id="@+id/groupSize1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/location"
@@ -100,8 +100,8 @@
         android:layout_width="90dp"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:text="JOIN"
-        android:id="@+id/signUpButton"
+        android:text="QUIT"
+        android:id="@+id/quitButton"
         android:background="#4fb3f5"
         android:textColor="@color/white"
         android:textSize="20sp"
