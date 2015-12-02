@@ -4,52 +4,51 @@ import com.parse.ParseClassName;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 
-@ParseClassName("Post")
-public class Post extends ParseObject{
+public class Group{
+
+	private String classname;
+	private String location;
+	private String timedate;
+	private String groupsize;
 
 
-	public Post(){
+	public Group(){
 
 	}
 
 	public String getClassName(){
-        try {
-            return fetchIfNeeded().getString("ClassName");
-        } catch (ParseException e) {
-            e.printStackTrace();
-            return "";
-        }
+            return classname;
     }
 
 	public void setClassName(String className){
-		put("ClassName",className);
+		classname = className;
 	}
 
 	public String getLocation(){
-		return getString("Location");
+		return location;
 	}
 
 	public void setLocation(String location){
-		put("Location",location);
+		this.location = location;
 	}
 
 	public String getClassTimeDate(){
-		return getString("TimeNdate");
+		return timedate;
 	}
 
 	public void setClassTimeDate(String timeNdate){
-		put("TimeNdate",timeNdate);
+		timedate = timeNdate;
 	}
 
 
 
 
 	public String getGroupSize(){
-		return getString("GroupSize");
+		return groupsize;
 	}
 
 	public void setGroupSize(String groupSize){
-		put("GroupSize",groupSize);
+		groupsize = groupSize;
 	}
 
 // public String getCurrentGroupSize(){

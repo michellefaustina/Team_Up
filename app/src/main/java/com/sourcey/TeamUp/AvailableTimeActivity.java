@@ -11,8 +11,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.parse.FindCallback;
+import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
@@ -25,7 +27,7 @@ public class AvailableTimeActivity extends Activity {
     List<ParseObject> ob;
     ProgressDialog mProgressDialog;
     ListViewAdapter adapter;
-    private List<Post> posts = null;
+    private List<Group> posts = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,41 +67,44 @@ public class AvailableTimeActivity extends Activity {
             super.onPreExecute();
             // Create a progressdialog
             mProgressDialog = new ProgressDialog(AvailableTimeActivity.this);
-            //Set progressdialog title
-            mProgressDialog.setTitle(null);
-            // Set progressdialog message
-            mProgressDialog.setMessage("Loading...");
-            mProgressDialog.setIndeterminate(false);
-            // Show progressdialog
-            mProgressDialog.show();
+//            //Set progressdialog title
+//            mProgressDialog.setTitle(null);
+//            // Set progressdialog message
+//            mProgressDialog.setMessage("Loading...");
+//            mProgressDialog.setIndeterminate(false);
+//            // Show progressdialog
+//            mProgressDialog.show();
         }
 
         @Override
         protected Void doInBackground(Void... params) {
-            Log.d(TAG,"in background");
+            Log.d(TAG, "in background");
             // Create the array
-            posts = new ArrayList<Post>();
-            // Locate the class table named "Post" in Parse.com
-            ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Post");
-            query.findInBackground(new FindCallback<ParseObject>() {
-                @Override
-                public void done(List<ParseObject> objects, ParseException e) {
-                    if (e == null) {
-                        for (ParseObject country : objects) {
-                            Post map = new Post();
-                            map.setClassName(country.getString("ClassName"));
-                            map.setClassTimeDate(country.getString("TimeNDate"));
-                            map.setLocation(country.getString("Location"));
-                            map.setGroupSize(country.getString("GroupSize"));
-                            posts.add(map);
-                        }
-                    } else {
-                        Log.e("Error", e.getMessage());
-                        e.printStackTrace();
-                    }
+            posts = new ArrayList<Group>();
+            try {
+                // Locate the class table named "Post" in Parse.com
+                ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Post");
+                ob = query.find();
+//                Toast.makeText(AvailableTimeActivity.this, "IFFFFF" + ob.size(), Toast.LENGTH_LONG).show();
+                Log.d(TAG,"before for");
+                for (ParseObject country : ob) {
+                    Toast.makeText(getApplicationContext(), "inforloop", Toast.LENGTH_LONG).show();
+                    ParseObject object = country.getParseObject("Post");
+                    Group map = new Group();
+                    map.setClassName(country.getString("ClassName"));
+                    map.setClassTimeDate(country.getString("TimeNDate"));
+                    map.setLocation(country.getString("Location"));
+                    map.setGroupSize(country.getString("GroupSize"));
+                    posts.add(map);
+                    Log.d(TAG,"before end for");
                 }
-            });
-            return null;
+                Log.d(TAG,"end for");
+//                Toast.makeText(AvailableTimeActivity.this, "end of for loop", Toast.LENGTH_LONG).show();
+            } catch (ParseException e) {
+                Log.e("Error", e.getMessage());
+                e.printStackTrace();
+            }
+        return null;
         }
 
         @Override

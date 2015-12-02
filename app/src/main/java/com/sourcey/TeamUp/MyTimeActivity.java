@@ -58,6 +58,7 @@ public class MyTimeActivity extends AppCompatActivity {
         private int layout;
         private List<String> list;
         private int position;
+        Context context;
 
         public CustomAdapter(Context context, int resource, List<String> objects) {
             super(context, resource, objects);
@@ -67,8 +68,8 @@ public class MyTimeActivity extends AppCompatActivity {
 
         @Override
         public View getView(final int position, View convertView, ViewGroup parent) {
-            ViewHolder holder = null;
             this.position = position;
+            ViewHolder holder = null;
             if(convertView == null){
                 LayoutInflater inflater = LayoutInflater.from(getContext());
                 convertView = inflater.inflate(layout,parent,false);
