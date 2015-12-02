@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/classNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="class_name:"
+            android:layout_weight="1"
+            android:textSize="20dp"
+            />
+
+        <TextView
+            android:id="@+id/className"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/classNameLabel"
+            android:layout_weight="1"
+            android:textSize="20dp"
+
+            />
+
+        <TextView
+            android:id="@+id/timeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/classNameLabel"
+            android:text="time/date:"
+            android:layout_weight="1"
+            android:textSize="20dp"
+
+            android:layout_marginTop="-7dp"
+            />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/className"
+            android:layout_toRightOf="@+id/timeLabel"
+            android:layout_weight="1"
+            android:textSize="20dp"
+
+            android:layout_marginTop="-7dp"
+            />
+
+        <TextView
+            android:id="@+id/locationLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/timeLabel"
+            android:text="location: "
+            android:layout_weight="1"
+            android:textSize="20dp"
+
+            android:layout_marginTop="-7dp"
+            />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/time"
+            android:layout_toRightOf="@+id/locationLabel"
+            android:layout_weight="1"
+            android:textSize="20dp"
+
+            android:layout_marginTop="-7dp"
+            />
+
+        <TextView
+            android:id="@+id/groupSizeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/locationLabel"
+            android:text="group_size: "
+            android:layout_weight="1"
+            android:textSize="20dp"
+
+            android:layout_marginTop="-7dp"
+            />
+
+        <TextView
+            android:id="@+id/groupSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/location"
+            android:layout_toRightOf="@+id/groupSizeLabel"
+            android:layout_weight="1"
+            android:textSize="20dp"
+            android:layout_marginTop="-7dp"
+            />
+    </RelativeLayout>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="90dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:text="Quit"
+        android:id="@+id/QuitButton"
+        android:background="#4fb3f5"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_toRightOf="@+id/className"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        />
+
+</LinearLayout>

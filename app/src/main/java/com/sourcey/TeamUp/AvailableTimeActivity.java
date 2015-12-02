@@ -127,9 +127,7 @@ public class AvailableTimeActivity extends Activity implements ListViewAdapter.c
     public void onButtonClickListner(int position, Object value) {
         Toast.makeText(AvailableTimeActivity.this, "Joined Group!",
                 Toast.LENGTH_SHORT).show();
-//        ParseRelation<ParseObject> relation = ParseUser.getCurrentUser().getRelation("Post");
-//        relation.add(post);
-//        ParseUser.getCurrentUser().saveInBackground();
+
 
     }
 

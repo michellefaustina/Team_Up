@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -24,7 +25,8 @@ import com.parse.ParseRelation;
 import com.parse.ParseUser;
 import com.sourcey.TeamUp.Post;
 
-public class ListViewAdapter extends BaseAdapter {
+public class MytimeAdapter extends BaseAdapter {
+    final String Tag = "mytimAdapt";
 
     // Declare Variables
     Context context;
@@ -40,7 +42,7 @@ public class ListViewAdapter extends BaseAdapter {
         this.customListner = listener;
     }
 
-    public ListViewAdapter(Context context,
+    public MytimeAdapter(Context context,
                            List<AvailableTimePost> list) {
         this.context = context;
         this.postList = list;
@@ -77,14 +79,14 @@ public class ListViewAdapter extends BaseAdapter {
         final ViewHolder holder;
         if (view == null) {
             holder = new ViewHolder();
-            view = inflater.inflate(R.layout.activity_elementtimes, parent, false);
+            view = inflater.inflate(R.layout.activity_myelementtimes, parent, false);
             // Locate the TextViews in listview_item.xml
             holder.classname = (TextView) view.findViewById(R.id.className);
             holder.datetime = (TextView) view.findViewById(R.id.time);
             holder.location = (TextView) view.findViewById(R.id.location);
             // Locate the ImageView in listview_item.xml
             holder.groupsize = (TextView) view.findViewById(R.id.groupSize);
-            holder.signup = (Button)view.findViewById(R.id.signUpButton);
+            holder.signup = (Button)view.findViewById(R.id.QuitButton);
             view.setTag(holder);
         } else {
             holder = (ViewHolder) view.getTag();
@@ -141,14 +143,19 @@ public class ListViewAdapter extends BaseAdapter {
                         query.orderByDescending("createdAt");
                         List<ParseObject> ob = query.find();
 
-                        relation.add(ob.get(position));
+                        relation.remove(ob.get(position));
+                        Log.v(Tag, "index=" + position);
                         ParseUser.getCurrentUser().saveInBackground();
+                    } catch (ParseException e) {
+                        Log.e("Error", e.getMessage());
+                        e.printStackTrace();
                     }
-                    catch (ParseException e) {
-                    Log.e("Error", e.getMessage());
-                    e.printStackTrace();
-                    }
-
+//                   AvailableTimePost item = postList.get(position);
+//                    postList.remove(item);
+////                    adapter = new MytimeAdapter(MyTimeActivity.this, posts);
+////                    adapter.setCustomButtonListner(MyTimeActivity.this);
+////                    // Binds the Adapter to the ListView
+////                    listview.setAdapter(adapter);
 
 
                 } else {
@@ -166,4 +173,3 @@ public class ListViewAdapter extends BaseAdapter {
 
 
 }
-
