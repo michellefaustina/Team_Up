@@ -18,6 +18,7 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseRelation;
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +46,7 @@ public class MyTimeActivity extends AppCompatActivity {
 //        new RemoteDataTask().execute();
 
         ImageButton backBtn = (ImageButton)findViewById(R.id.backBtn);
-//        Button quitBtn = (Button)findViewById(R.id.quitButton);
+        Button quitBtn = (Button)findViewById(R.id.quitButton);
 
         // Back
         backBtn.setOnClickListener(new View.OnClickListener() {
@@ -82,16 +83,14 @@ public class MyTimeActivity extends AppCompatActivity {
             posts = new ArrayList<AvailableTimePost>();
             try {
                 // Locate the class table named "Country" in Parse.com
-                ParseObject user = new ParseObject("_user");
-                // Locate the column named "ranknum" in Parse.com and order list
-                // by ascending
-                ParseQuery<ParseObject> query = ParseQuery.getQuery("MyGroup");
-                query.whereEqualTo("");
+                ParseObject user = ParseUser.getCurrentUser();
+                ParseRelation relation = user.getRelation("Post");
+                ParseQuery<ParseObject> q = relation.getQuery();
+                ob = q.find();
                 Log.d(TAG,"before loop");
                 for (ParseObject country : ob) {
                     // Locate images in flag column
                     AvailableTimePost map = new AvailableTimePost();
-                    Log.d(TAG,"in loop");
                     map.setClassName(country.fetchIfNeeded().getString("Course"));
                     map.setClassTime(country.getString("Timedate"));
                     map.setLocation(country.getString("Location"));
@@ -108,11 +107,11 @@ public class MyTimeActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void result) {
             // Locate the listview in listview_main.xml
-            listview = (ListView) findViewById(R.id.listv);
+            listView = (ListView) findViewById(R.id.listv);
             // Pass the results into ListViewAdapter.java
-            adapter = new ListViewAdapter(AvailableTimeActivity.this, posts);
+            adapter = new ListViewAdapter(MyTimeActivity.this, posts);
             // Binds the Adapter to the ListView
-            listview.setAdapter(adapter);
+            listView.setAdapter(adapter);
             // Close the progressdialog
             mProgressDialog.dismiss();
         }
