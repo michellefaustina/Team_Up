@@ -75,7 +75,7 @@ public class PopupActivity extends Activity{
                 Log.d(TAG, "p");
                 Log.d(TAG, "cclassname");
                 p.setClassTimeDate(time.getText().toString());
-//                p.setClassName(className1.getText().toString());
+                p.setClassName(className1.getText().toString());
                 p.setGroupSize(groupSize.getText().toString());
                 p.setLocation(location.getText().toString());
                 Log.d(TAG, "end");

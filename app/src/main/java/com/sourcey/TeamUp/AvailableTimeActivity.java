@@ -91,10 +91,10 @@ public class AvailableTimeActivity extends Activity {
                     // Locate images in flag column
                     AvailableTimePost map = new AvailableTimePost();
                     Log.d(TAG,"in loop");
-//                  map.setClassName(country.fetchIfNeeded().getString("ClassName"));
-                    map.setClassTime(country.getString("TimeNDate"));
+                    map.setClassName(country.fetchIfNeeded().getString("Course"));
+                    map.setClassTime(country.getString("Timedate"));
                     map.setLocation(country.getString("Location"));
-                    map.setGroupSize(country.getString("GroupSize"));
+                    map.setGroupSize(country.getString("Groupsize"));
                     posts.add(map);
                 }
             } catch (ParseException e) {

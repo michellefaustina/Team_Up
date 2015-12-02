@@ -36,22 +36,22 @@ public class Post extends ParseObject{
 	}
 
 	public String getClassTimeDate(){
-		return getString("TimeNdate");
+		return getString("Timedate");
 	}
 
 	public void setClassTimeDate(String timeNdate){
-		put("TimeNdate",timeNdate);
+		put("Timedate",timeNdate);
 	}
 
 
 
 
 	public String getGroupSize(){
-		return getString("GroupSize");
+		return getString("Groupsize");
 	}
 
 	public void setGroupSize(String groupSize){
-		put("GroupSize",groupSize);
+		put("Groupsize",groupSize);
 	}
 
  public String getCurrentGroupSize(){
@@ -59,7 +59,7 @@ public class Post extends ParseObject{
  }
 
  public void setCurrentGroupSize(String currentGroupSize){
-    put("Date",currentGroupSize);
+    put("Groupsize",currentGroupSize);
  }
 
 
