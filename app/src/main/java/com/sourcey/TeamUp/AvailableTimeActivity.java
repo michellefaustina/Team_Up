@@ -81,31 +81,34 @@ public class AvailableTimeActivity extends Activity {
             Log.d(TAG, "in background");
             // Create the array
             posts = new ArrayList<Group>();
-            try {
                 // Locate the class table named "Post" in Parse.com
-                ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Post");
-                ob = query.find();
-//                Toast.makeText(AvailableTimeActivity.this, "IFFFFF" + ob.size(), Toast.LENGTH_LONG).show();
-                Log.d(TAG,"before for");
-                for (ParseObject country : ob) {
-                    Toast.makeText(getApplicationContext(), "inforloop", Toast.LENGTH_LONG).show();
-                    ParseObject object = country.getParseObject("Post");
-                    Group map = new Group();
-                    map.setClassName(country.getString("ClassName"));
-                    map.setClassTimeDate(country.getString("TimeNDate"));
-                    map.setLocation(country.getString("Location"));
-                    map.setGroupSize(country.getString("GroupSize"));
-                    posts.add(map);
-                    Log.d(TAG,"before end for");
-                }
-                Log.d(TAG,"end for");
-//                Toast.makeText(AvailableTimeActivity.this, "end of for loop", Toast.LENGTH_LONG).show();
-            } catch (ParseException e) {
-                Log.e("Error", e.getMessage());
-                e.printStackTrace();
-            }
+                ParseQuery<ParseObject> query = ParseQuery.getQuery("Post");
+                query.findInBackground(new FindCallback<ParseObject>() {
+                    @Override
+                    public void done(List<ParseObject> objects, ParseException e) {
+                        if (e == null) {
+                            Toast.makeText(AvailableTimeActivity.this, "IFFFFF" + objects.size(), Toast.LENGTH_LONG).show();
+                            Log.d(TAG, "before for");
+                            for (ParseObject country : objects) {
+                                Toast.makeText(getApplicationContext(), "inforloop", Toast.LENGTH_LONG).show();
+                                ParseObject object = country.getParseObject("Post");
+                                Group map = new Group();
+                                map.setClassName(country.getString("ClassName"));
+                                map.setClassTimeDate(country.getString("TimeNDate"));
+                                map.setLocation(country.getString("Location"));
+                                map.setGroupSize(country.getString("GroupSize"));
+                                posts.add(map);
+                            }
+                            Toast.makeText(AvailableTimeActivity.this, "end of for loop", Toast.LENGTH_LONG).show();
+                        } else {
+                            Log.e("Error", e.getMessage());
+                            e.printStackTrace();
+                        }
+                    }
+                });
         return null;
         }
+
 
         @Override
         protected void onPostExecute(Void result) {
