@@ -63,11 +63,11 @@ public class ListViewAdapter extends BaseAdapter {
             holder = new ViewHolder();
             view = inflater.inflate(R.layout.activity_elementtimes, parent, false);
             // Locate the TextViews in listview_item.xml
-            holder.classname = (TextView) view.findViewById(R.id.classNameLabel);
-            holder.datetime = (TextView) view.findViewById(R.id.timeLabel);
-            holder.location = (TextView) view.findViewById(R.id.locationLabel);
+            holder.classname = (TextView) view.findViewById(R.id.className);
+            holder.datetime = (TextView) view.findViewById(R.id.time);
+            holder.location = (TextView) view.findViewById(R.id.location);
             // Locate the ImageView in listview_item.xml
-            holder.groupsize = (TextView) view.findViewById(R.id.groupSizeLabel);
+            holder.groupsize = (TextView) view.findViewById(R.id.groupSize);
             holder.signup = (Button)view.findViewById(R.id.signUpButton);
             view.setTag(holder);
         } else {
