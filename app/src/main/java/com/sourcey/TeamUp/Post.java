@@ -12,17 +12,19 @@ public class Post extends ParseObject{
 
 	}
 
-	public String getClassName(){
-        try {
-            return fetchIfNeeded().getString("ClassName");
-        } catch (ParseException e) {
-            e.printStackTrace();
-            return "";
-        }
+	public String getCourse(){
+//        try {
+//            return fetchIfNeeded().getString("ClassName");
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//            return "";
+//        }
+ return getString("Course");
+
     }
 
-	public void setClassName(String className){
-		put("ClassName",className);
+	public void setClassName(String course){
+		put("Course",course);
 	}
 
 	public String getLocation(){

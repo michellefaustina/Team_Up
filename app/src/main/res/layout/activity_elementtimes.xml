@@ -1,46 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:orientation="horizontal" android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content">-->
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_weight="1">
+    <!--<LinearLayout-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_weight="1">-->
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:text="Class Name:"
-            android:id="@+id/classNameLabel"
-            android:layout_weight="2"/>
+        <!--<TextView-->
+            <!--android:id="@+id/classNameLabel"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="class_name:" />-->
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:text="Time:"
-            android:id="@+id/timeLabel"
-            android:layout_weight="2"/>
+        <!--<TextView-->
+            <!--android:id="@+id/className"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_toRightOf="@+id/classNameLabel"/>-->
 
-        <TextView
-            android:layout_width="match_parent"
-                android:layout_height="fill_parent"
-            android:text="Location:"
-            android:id="@+id/locationLabel"
-            android:layout_weight="2"/>
+        <!--<TextView-->
+            <!--android:id="@+id/timeLabel"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/classNameLabel"-->
+            <!--android:text="time/date:" />-->
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:text="Group Size:"
-            android:id="@+id/groupSizeLabel"
-            android:layout_weight="2"/>
-    </LinearLayout>
+        <!--<TextView-->
+            <!--android:id="@+id/time"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/className"-->
+            <!--android:layout_toRightOf="@+id/timeLabel" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/locationLabel"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/timeLabel"-->
+            <!--android:text="location" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/location"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/time"-->
+            <!--android:layout_toRightOf="@+id/locationLabel" />-->
+        <!--<TextView-->
+            <!--android:id="@+id/groupSizeLabel"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/locationLabel"-->
+            <!--android:text="group_size" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/groupSize"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/time"-->
+            <!--android:layout_toRightOf="@+id/groupSizeLabel" />-->
+
+    <!--</LinearLayout>-->
+
+    <!--<Button-->
+        <!--style="?android:attr/buttonStyleSmall"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_weight="1"-->
+        <!--android:text="JOIN"-->
+        <!--android:id="@+id/signUpButton"-->
+        <!--android:background="#4fb3f5"-->
+        <!--android:textColor="@color/white"-->
+        <!--android:layout_marginLeft="14dp"/>-->
+
+<!--</LinearLayout>-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/classNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="class_name:" />
+
+    <TextView
+        android:id="@+id/className"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/classNameLabel"/>
+
+    <TextView
+        android:id="@+id/timeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/classNameLabel"
+        android:text="time/date:" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/className"
+        android:layout_toRightOf="@+id/timeLabel" />
+
+    <TextView
+        android:id="@+id/locationLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/timeLabel"
+        android:text="location" />
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/time"
+        android:layout_toRightOf="@+id/locationLabel" />
+    <TextView
+        android:id="@+id/groupSizeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/locationLabel"
+        android:text="group_size" />
+
+    <TextView
+        android:id="@+id/groupSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/time"
+        android:layout_toRightOf="@+id/groupSizeLabel" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="1"
@@ -48,6 +144,10 @@
         android:id="@+id/signUpButton"
         android:background="#4fb3f5"
         android:textColor="@color/white"
-        android:layout_marginLeft="14dp"/>
+        android:textSize="32sp"
+        android:layout_toRightOf="@+id/className"
+        android:layout_marginLeft="230dp"
 
-</LinearLayout>
+        />
+
+</RelativeLayout>
