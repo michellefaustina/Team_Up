@@ -13,7 +13,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -43,7 +45,7 @@ public class MyTimeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mytime);
         // Execute RemoteDataTask AsyncTask
-//        new RemoteDataTask().execute();
+        new RemoteDataTask().execute();
 
         ImageButton backBtn = (ImageButton)findViewById(R.id.backBtn);
         Button quitBtn = (Button)findViewById(R.id.quitButton);
@@ -76,38 +78,54 @@ public class MyTimeActivity extends AppCompatActivity {
             // Show progressdialog
             mProgressDialog.show();
         }
+
         @Override
         protected Void doInBackground(Void... params) {
             // Create the array
             Log.d(TAG, "async do in bg");
             posts = new ArrayList<AvailableTimePost>();
-            try {
                 // Locate the class table named "Country" in Parse.com
                 ParseObject user = ParseUser.getCurrentUser();
-                ParseRelation relation = user.getRelation("Post");
+                ParseRelation relation = user.getRelation("Mypost");
                 ParseQuery<ParseObject> q = relation.getQuery();
+            try {
                 ob = q.find();
-                Log.d(TAG,"before loop");
-                for (ParseObject country : ob) {
-                    // Locate images in flag column
-                    AvailableTimePost map = new AvailableTimePost();
-                    map.setClassName(country.fetchIfNeeded().getString("Course"));
-                    map.setClassTime(country.getString("Timedate"));
-                    map.setLocation(country.getString("Location"));
-                    map.setGroupSize(country.getString("Groupsize"));
-                    posts.add(map);
-                }
             } catch (ParseException e) {
-                Log.e("Error", e.getMessage());
                 e.printStackTrace();
             }
+            q.findInBackground(new FindCallback<ParseObject>() {
+                    @Override
+                    public void done(List<ParseObject> objects, ParseException e) {
+                        if (e == null) {
+                            Log.d(TAG, "before loop");
+                            for (ParseObject country : ob) {
+                                // Locate images in flag column
+                                Toast.makeText(MyTimeActivity.this, "in for loop", Toast.LENGTH_LONG);
+                                AvailableTimePost map = new AvailableTimePost();
+                                try {
+                                    map.setClassName(country.fetchIfNeeded().getString("Course"));
+                                } catch (ParseException e1) {
+                                    e1.printStackTrace();
+                                    map.setClassTime("");
+                                }
+                                map.setClassTime(country.getString("Timedate"));
+                                map.setLocation(country.getString("Location"));
+                                map.setGroupSize(country.getString("Groupsize"));
+                                posts.add(map);
+                            }
+                        } else {
+                            Log.e("Error", e.getMessage());
+                            e.printStackTrace();
+                        }
+                    }
+                });
             return null;
         }
 
         @Override
         protected void onPostExecute(Void result) {
             // Locate the listview in listview_main.xml
-            listView = (ListView) findViewById(R.id.listv);
+            listView = (ListView) findViewById(R.id.myTimes);
             // Pass the results into ListViewAdapter.java
             adapter = new ListViewAdapter(MyTimeActivity.this, R.layout.activity_elementmytimes,posts);
             // Binds the Adapter to the ListView
