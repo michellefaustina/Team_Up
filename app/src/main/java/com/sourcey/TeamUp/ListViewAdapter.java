@@ -27,6 +27,7 @@ public class ListViewAdapter extends BaseAdapter {
     private List<AvailableTimePost> postList = null;
     private ArrayList<AvailableTimePost> arraylist;
     customButtonListener customListner;
+    int layout;
 
     public interface customButtonListener {
         public void onButtonClickListner(int position,Object value);
@@ -35,13 +36,14 @@ public class ListViewAdapter extends BaseAdapter {
         this.customListner = listener;
     }
 
-    public ListViewAdapter(Context context,
+    public ListViewAdapter(Context context,int resource,
                            List<AvailableTimePost> list) {
         this.context = context;
         this.postList = list;
         inflater = LayoutInflater.from(context);
         this.arraylist = new ArrayList<AvailableTimePost>();
         this.arraylist.addAll(postList);
+        this.layout = resource;
     }
 
     public class ViewHolder {
@@ -72,7 +74,7 @@ public class ListViewAdapter extends BaseAdapter {
         final ViewHolder holder;
         if (view == null) {
             holder = new ViewHolder();
-            view = inflater.inflate(R.layout.activity_elementtimes, parent, false);
+            view = inflater.inflate(this.layout, parent, false);
             // Locate the TextViews in listview_item.xml
             holder.classname = (TextView) view.findViewById(R.id.className);
             holder.datetime = (TextView) view.findViewById(R.id.time);

@@ -114,7 +114,7 @@ public class AvailableTimeActivity extends Activity implements ListViewAdapter.c
             // Locate the listview in listview_main.xml
             listview = (ListView) findViewById(R.id.listv);
             // Pass the results into ListViewAdapter.java
-            adapter = new ListViewAdapter(AvailableTimeActivity.this, posts);
+            adapter = new ListViewAdapter(AvailableTimeActivity.this,R.layout.activity_elementtimes, posts);
             adapter.setCustomButtonListner(AvailableTimeActivity.this);
             // Binds the Adapter to the ListView
             listview.setAdapter(adapter);
