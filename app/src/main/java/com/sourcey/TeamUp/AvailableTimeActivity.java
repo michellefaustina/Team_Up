@@ -25,7 +25,7 @@ public class AvailableTimeActivity extends Activity {
     List<ParseObject> ob;
     ProgressDialog mProgressDialog;
     ListViewAdapter adapter;
-    private List<Post> posts = null;
+    private List<AvailableTimePost> posts;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -73,32 +73,34 @@ public class AvailableTimeActivity extends Activity {
             // Show progressdialog
             mProgressDialog.show();
         }
-
         @Override
         protected Void doInBackground(Void... params) {
-            Log.d(TAG,"in background");
             // Create the array
-            posts = new ArrayList<Post>();
-            // Locate the class table named "Post" in Parse.com
-            ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Post");
-            query.findInBackground(new FindCallback<ParseObject>() {
-                @Override
-                public void done(List<ParseObject> objects, ParseException e) {
-                    if (e == null) {
-                        for (ParseObject country : objects) {
-                            Post map = new Post();
-                            map.setClassName(country.getString("ClassName"));
-                            map.setClassTimeDate(country.getString("TimeNDate"));
-                            map.setLocation(country.getString("Location"));
-                            map.setGroupSize(country.getString("GroupSize"));
-                            posts.add(map);
-                        }
-                    } else {
-                        Log.e("Error", e.getMessage());
-                        e.printStackTrace();
-                    }
+            Log.d(TAG,"async do in bg");
+            posts = new ArrayList<AvailableTimePost>();
+            try {
+                // Locate the class table named "Country" in Parse.com
+                ParseQuery<ParseObject> query = new ParseQuery<ParseObject>(
+                        "Post");
+                // Locate the column named "ranknum" in Parse.com and order list
+                // by ascending
+                query.orderByAscending("ClassName");
+                ob = query.find();
+                Log.d(TAG,"before loop");
+                for (ParseObject country : ob) {
+                    // Locate images in flag column
+                    AvailableTimePost map = new AvailableTimePost();
+                    Log.d(TAG,"in loop");
+//                  map.setClassName(country.fetchIfNeeded().getString("ClassName"));
+                    map.setClassTime(country.getString("TimeNDate"));
+                    map.setLocation(country.getString("Location"));
+                    map.setGroupSize(country.getString("GroupSize"));
+                    posts.add(map);
                 }
-            });
+            } catch (ParseException e) {
+                Log.e("Error", e.getMessage());
+                e.printStackTrace();
+            }
             return null;
         }
 

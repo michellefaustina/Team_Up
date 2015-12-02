@@ -22,15 +22,15 @@ public class ListViewAdapter extends BaseAdapter {
     // Declare Variables
     Context context;
     LayoutInflater inflater;
-    private List<Post> postList = null;
-    private ArrayList<Post> arraylist;
+    private List<AvailableTimePost> postList = null;
+    private ArrayList<AvailableTimePost> arraylist;
 
     public ListViewAdapter(Context context,
-                           List<Post> list) {
+                           List<AvailableTimePost> list) {
         this.context = context;
         this.postList = list;
         inflater = LayoutInflater.from(context);
-        this.arraylist = new ArrayList<Post>();
+        this.arraylist = new ArrayList<AvailableTimePost>();
         this.arraylist.addAll(postList);
     }
 
@@ -75,7 +75,7 @@ public class ListViewAdapter extends BaseAdapter {
         }
         // Set the results into TextViews
         holder.classname.setText(postList.get(position).getClassName());
-        holder.datetime.setText(postList.get(position).getClassTimeDate());
+        holder.datetime.setText(postList.get(position).getClassTimeNDate());
         holder.location.setText(postList.get(position)
                 .getLocation());
         holder.groupsize.setText(postList.get(position).getGroupSize());
@@ -92,7 +92,7 @@ public class ListViewAdapter extends BaseAdapter {
                         (postList.get(position).getClassName()));
                 // Pass all data country
                 intent.putExtra("Time",
-                        (postList.get(position).getClassTimeDate()));
+                        (postList.get(position).getClassTimeNDate()));
                 // Pass all data population
                 intent.putExtra("Location",
                         (postList.get(position).getLocation()));
