@@ -116,7 +116,7 @@
             android:paddingTop="20dp">
 
             <TextView
-                android:layout_width="200dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Class Selection:"
@@ -131,7 +131,8 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:spinnerMode="dropdown"
-                android:clickable="false" />
+                android:clickable="false"
+                android:popupBackground="@color/white"/>
 
 
         </LinearLayout>
