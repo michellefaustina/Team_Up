@@ -31,6 +31,7 @@
         <activity android:name=".DetailsMTActivity"/>
         <activity android:name=".LoginActivity"  android:theme="@style/AppTheme.Light"/>
         <activity android:name=".EmailVerifyActivity" android:theme="@style/AppTheme.Light"/>
+        <activity android:name=".ElementtimesActivity"/>
 
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
